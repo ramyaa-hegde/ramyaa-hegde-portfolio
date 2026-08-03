@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Ramya Hegde</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 24px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: #334155;
+      margin-bottom: 20px;
+    }
+
+    .project {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .project h2 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .project ul {
+      margin: 14px 0 18px 20px;
+      color: #334155;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #cbd5e1;
+      color: #0f172a;
+    }
+
+    .btn.primary {
+      background: #2563eb;
+      color: white;
+      border-color: #2563eb;
+    }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #e2e8f0;
+      color: #64748b;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        justify-content: center;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <h1>Projects</h1>
+
+    <p>
+      These projects represent my transition from operations analytics into AI/ML engineering.
+      Every project shown here is real work completed through my internship, university program,
+      or portfolio development.
+    </p>
+
+    <div class="project">
+      <h2>Search Intelligence Engine & Content Opportunity Scoring</h2>
+
+      <p>
+        An end-to-end machine learning pipeline built during the FlyRank ML Internship that processes
+        <strong>79M+ search records</strong> to identify underperforming content and prioritize refresh opportunities.
+      </p>
+
+      <ul>
+        <li>DuckDB-based analytics pipeline</li>
+        <li>Feature engineering and temporal leakage prevention</li>
+        <li>ML ranking and scoring workflow</li>
+        <li>Automated action queue generation</li>
+        <li>GitHub Actions validation and deployment</li>
+      </ul>
+
+      <div class="buttons">
+        <a class="btn primary" href="https://github.com/ramyaa-hegde/flyrank-ml-internship-tasks" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+        <a class="btn" href="https://ramyaa-hegde.github.io/flyrank-ml-internship-tasks/" target="_blank" rel="noopener noreferrer">Live Technical Paper</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h2>AI Workflow Automation Pipeline</h2>
+
+      <p>
+        A structured documentation and portfolio workflow created during the FlyRank AI Fluency track,
+        using AI-assisted automation, prompt engineering, and MCP-based tooling concepts.
+      </p>
+
+      <ul>
+        <li>Multi-step documentation workflow</li>
+        <li>Portfolio asset generation</li>
+        <li>Prompt engineering</li>
+        <li>MCP connector experimentation</li>
+      </ul>
+
+      <div class="buttons">
+        <a class="btn" href="https://github.com/ramyaa-hegde" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+      </div>
+    </div>
+
+    <footer>
+      More projects will be added as I continue building my AI/ML portfolio.
+    </footer>
+
+  </div>
+</body>
+</html>
