@@ -16,110 +16,216 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background-color: #f8fafc;
       color: #0f172a;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 24px;
+      line-height: 1.7;
     }
 
-    .card {
-      background: #ffffff;
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 24px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    .hero {
+      background: white;
       border: 1px solid #e2e8f0;
       border-radius: 16px;
-      padding: 3rem;
-      max-width: 620px;
-      width: 100%;
+      padding: 48px;
       box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
     }
 
     h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: #0f172a;
+      font-size: 2.4rem;
+      margin-bottom: 12px;
     }
 
     .subtitle {
-      font-size: 1rem;
-      font-weight: 600;
       color: #2563eb;
-      margin-bottom: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 24px;
     }
 
     p {
-      font-size: 1rem;
-      line-height: 1.7;
+      margin-bottom: 18px;
       color: #334155;
-      margin-bottom: 1rem;
     }
 
-    .status {
-      margin-top: 2rem;
-      padding-top: 1rem;
-      border-top: 1px solid #e2e8f0;
-      font-size: 0.95rem;
-      color: #64748b;
-    }
-
-    .links {
-      margin-top: 1.5rem;
+    .buttons {
       display: flex;
-      gap: 1rem;
+      gap: 16px;
       flex-wrap: wrap;
+      margin-top: 28px;
     }
 
-    .links a {
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 10px;
       text-decoration: none;
-      color: #2563eb;
       font-weight: 600;
-      transition: color 0.2s ease;
+      border: 1px solid #cbd5e1;
+      color: #0f172a;
     }
 
-    .links a:hover {
+    .btn.primary {
+      background: #2563eb;
+      color: white;
+      border-color: #2563eb;
+    }
+
+    .btn:hover {
+      opacity: 0.95;
+    }
+
+    .section {
+      margin-top: 56px;
+    }
+
+    .section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    .project-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .project-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .project-card p {
+      margin-bottom: 14px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      background: #eff6ff;
       color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid #e2e8f0;
+      color: #64748b;
+      font-size: 0.95rem;
+      text-align: center;
     }
 
     @media (max-width: 640px) {
-      .card {
-        padding: 2rem;
+      .hero {
+        padding: 32px 24px;
       }
 
       h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
+      }
+
+      nav {
+        justify-content: center;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="card">
-    <h1>Ramya Hegde</h1>
+  <div class="container">
 
-    <div class="subtitle">
-      AI/ML Engineer in Transition · Senior Operations Analyst · FlyRank ML Intern
-    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-    <p>
-      I build practical machine learning systems that turn large-scale search and
-      operational data into prioritized business decisions. My work focuses on
-      ranking systems, content intelligence, and production-ready ML pipelines.
-    </p>
+    <section class="hero">
+      <h1>Ramya Hegde</h1>
+      <div class="subtitle">
+        AI/ML Engineer in Transition · Senior Operations Analyst · FlyRank ML Intern
+      </div>
 
-    <p>
-      This portfolio is being built through the FlyRank AI Fluency and Machine
-      Learning tracks and will showcase my AI/ML projects, technical case studies,
-      research work, and engineering portfolio.
-    </p>
+      <p>
+        I build practical machine learning systems that turn large-scale search and operational
+        data into prioritized business decisions. My work focuses on ranking systems,
+        content intelligence, and production-ready ML pipelines.
+      </p>
 
-    <div class="links">
-      <a href="https://github.com/ramyaa-hegde" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/ramyaahegde" target="_blank">LinkedIn</a>
-    </div>
+      <p>
+        I am currently transitioning from operations analytics into AI/ML engineering through
+        my BSc in Data Science & Analytics at Jain University and the FlyRank Machine Learning Internship.
+      </p>
 
-    <div class="status">
-      Portfolio coming soon.
-    </div>
+      <div class="buttons">
+        <a class="btn primary" href="projects.html">View Projects</a>
+        <a class="btn" href="https://github.com/ramyaa-hegde" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/ramyaahegde" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Featured Project</h2>
+
+      <div class="project-card">
+        <h3>Search Intelligence Engine & Content Opportunity Scoring</h3>
+
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">DuckDB</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">GitHub Actions</span>
+        </div>
+
+        <p>
+          An end-to-end machine learning pipeline built during the FlyRank ML Internship that processes
+          <strong>79M+ search records</strong> to identify decaying content and prioritize refresh opportunities
+          using feature engineering, leakage-safe validation, and automated action queues.
+        </p>
+
+        <div class="buttons">
+          <a class="btn" href="projects.html">Project Details</a>
+          <a class="btn" href="https://github.com/ramyaa-hegde/flyrank-ml-internship-tasks" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Built with HTML and CSS · Hosted on GitHub Pages
+    </footer>
+
   </div>
 </body>
 </html>
