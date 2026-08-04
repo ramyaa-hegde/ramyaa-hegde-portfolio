@@ -123,12 +123,31 @@
         platforms below.
       </p>
 
-      <div class="links">
-        <a href="mailto:ramyahegde18@gmail.com">Email: ramyahegde18@gmail.com</a>
-        <a href="https://www.linkedin.com/in/ramyaahegde" target="_blank" rel="noopener noreferrer">LinkedIn: linkedin.com/in/ramyaahegde</a>
-        <a href="https://github.com/ramyaa-hegde" target="_blank" rel="noopener noreferrer">GitHub: github.com/ramyaa-hegde</a>
-      </div>
-    </div>
+    <form name="contact" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="contact" />
+
+  <p>
+    <label>Your Name:<br />
+      <input type="text" name="name" required />
+    </label>
+  </p>
+
+  <p>
+    <label>Your Email:<br />
+      <input type="email" name="email" required />
+    </label>
+  </p>
+
+  <p>
+    <label>Message:<br />
+      <textarea name="message" rows="5" required></textarea>
+    </label>
+  </p>
+
+  <p>
+    <button type="submit">Send Message</button>
+  </p>
+</form>
 
     <footer>
       Thank you for visiting my portfolio.
