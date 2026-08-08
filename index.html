@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ramya Hegde | AI/ML Portfolio</title>
+
+  <title>Ramya Hegde | AI/ML & Data Science Portfolio</title>
+
+  <meta
+    name="description"
+    content="Portfolio of Ramya Hegde — Senior Operations Analyst transitioning into AI/ML through applied machine learning, search intelligence, AI agents, and data science."
+  />
 
   <style>
     * {
@@ -71,7 +77,7 @@
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
-      margin-top: 28px;
+      margin-top: 24px;
     }
 
     .btn {
@@ -82,6 +88,7 @@
       font-weight: 600;
       border: 1px solid #cbd5e1;
       color: #0f172a;
+      background: white;
     }
 
     .btn.primary {
@@ -91,7 +98,7 @@
     }
 
     .btn:hover {
-      opacity: 0.95;
+      opacity: 0.92;
     }
 
     .section {
@@ -100,7 +107,18 @@
 
     .section h2 {
       font-size: 1.5rem;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
+    }
+
+    .section-intro {
+      color: #64748b;
+      margin-bottom: 22px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
     }
 
     .project-card {
@@ -120,11 +138,18 @@
       margin-bottom: 14px;
     }
 
+    .project-type {
+      color: #64748b;
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
     .tags {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     .tag {
@@ -137,6 +162,25 @@
       font-weight: 600;
     }
 
+    .impact {
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      padding: 14px 16px;
+      margin: 18px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .impact strong {
+      color: #0f172a;
+    }
+
+    .skills-grid {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
     footer {
       margin-top: 64px;
       padding-top: 24px;
@@ -147,6 +191,10 @@
     }
 
     @media (max-width: 640px) {
+      .container {
+        padding: 24px 18px;
+      }
+
       .hero {
         padding: 32px 24px;
       }
@@ -157,6 +205,12 @@
 
       nav {
         justify-content: center;
+        gap: 18px;
+        margin-bottom: 32px;
+      }
+
+      .project-card {
+        padding: 22px;
       }
     }
   </style>
@@ -172,58 +226,207 @@
       <a href="contact.html">Contact</a>
     </nav>
 
+    <!-- HERO -->
     <section class="hero">
       <h1>Ramya Hegde</h1>
+
       <div class="subtitle">
-        AI/ML Engineer in Transition · Senior Operations Analyst · FlyRank ML Intern
+        Senior Operations Analyst → AI/ML & Data Science
       </div>
 
       <p>
-        I build practical machine learning systems that turn large-scale search and operational
-        data into prioritized business decisions. My work focuses on ranking systems,
-        content intelligence, and production-ready ML pipelines.
+        I build practical machine learning and AI systems that turn complex data
+        and technical work into useful decisions. My current work focuses on
+        search intelligence, machine learning pipelines, data analysis, and
+        AI-assisted automation.
       </p>
 
       <p>
-        I am currently transitioning from operations analytics into AI/ML engineering through
-        my BSc in Data Science & Analytics at Jain University and the FlyRank Machine Learning Internship.
+        I am building on my professional experience in operations analytics while
+        pursuing a BSc in Data Science & Analytics at Jain University and completing
+        applied AI/ML work through FlyRank.
       </p>
 
       <div class="buttons">
-        <a class="btn primary" href="projects.html">View Projects</a>
-        <a class="btn" href="https://github.com/ramyaa-hegde" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/ramyaahegde" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="btn primary" href="#featured-work">View My Work</a>
+
+        <a
+          class="btn"
+          href="https://github.com/ramyaa-hegde"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+
+        <a
+          class="btn"
+          href="https://www.linkedin.com/in/ramyaahegde"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
       </div>
     </section>
 
+    <!-- FEATURED WORK -->
+    <section class="section" id="featured-work">
+      <h2>Featured Work</h2>
+
+      <p class="section-intro">
+        Applied projects across machine learning, search intelligence, and AI agents.
+      </p>
+
+      <div class="project-grid">
+
+        <!-- ML PROJECT -->
+        <article class="project-card">
+
+          <div class="project-type">
+            MACHINE LEARNING · SEARCH INTELLIGENCE
+          </div>
+
+          <h3>
+            Search Intelligence Engine & Content Opportunity Scoring
+          </h3>
+
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">DuckDB</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Search Intelligence</span>
+            <span class="tag">GitHub Actions</span>
+          </div>
+
+          <p>
+            An end-to-end machine learning project built during the FlyRank ML
+            Internship using large-scale search-performance data. The workflow
+            processes <strong>79M+ search records</strong> and applies feature
+            engineering, model evaluation, leakage-aware validation, and automated
+            workflows to analyze content performance.
+          </p>
+
+          <div class="impact">
+            <strong>What it helps decide:</strong>
+            The system turns search-performance signals into ranked content
+            opportunities, helping identify which content should be prioritized
+            for review, refresh, or further investigation instead of relying only
+            on manual inspection.
+          </div>
+
+          <p>
+            The project emphasizes reproducible analysis and decision support rather
+            than claiming to predict Google's ranking algorithm.
+          </p>
+
+          <div class="buttons">
+            <a class="btn primary" href="projects.html">
+              View Case Study
+            </a>
+
+            <a
+              class="btn"
+              href="https://github.com/ramyaa-hegde/flyrank-ml-internship-tasks"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub Repository
+            </a>
+          </div>
+        </article>
+
+        <!-- SIPA -->
+        <article class="project-card">
+
+          <div class="project-type">
+            AI AGENT · AI FLUENCY
+          </div>
+
+          <h3>
+            Search Intelligence Portfolio Agent (SIPA)
+          </h3>
+
+          <div class="tags">
+            <span class="tag">AI Agents</span>
+            <span class="tag">Prompt Engineering</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Technical Documentation</span>
+            <span class="tag">Career Automation</span>
+          </div>
+
+          <p>
+            SIPA is a personal AI agent designed to transform completed technical
+            projects into consistent, recruiter-ready portfolio assets.
+          </p>
+
+          <p>
+            Instead of manually rebuilding documentation for every project, the
+            agent analyzes project artifacts such as GitHub repositories, Jupyter
+            notebooks, README files, technical notes, and available evaluation
+            results to generate structured career-facing documentation.
+          </p>
+
+          <div class="impact">
+            <strong>Why I built it:</strong>
+            SIPA helps bridge the gap between doing technical work and clearly
+            communicating that work to recruiters, hiring managers, and interviewers.
+          </div>
+
+          <p>
+            The project was developed during the FlyRank AI Fluency track as the
+            MVP of a longer-term personal career operating system.
+          </p>
+
+          <div class="buttons">
+            <a
+              class="btn primary"
+              href="https://github.com/ramyaa-hegde/SIPA-Agent"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View SIPA
+            </a>
+
+            <a
+              class="btn"
+              href="https://github.com/ramyaa-hegde/SIPA-Agent"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub Repository
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
     <section class="section">
-      <h2>Featured Project</h2>
+      <h2>Current Technical Toolkit</h2>
 
-      <div class="project-card">
-        <h3>Search Intelligence Engine & Content Opportunity Scoring</h3>
+      <p class="section-intro">
+        Technologies and practices demonstrated across my current projects.
+      </p>
 
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">DuckDB</span>
-          <span class="tag">Machine Learning</span>
-          <span class="tag">GitHub Actions</span>
-        </div>
-
-        <p>
-          An end-to-end machine learning pipeline built during the FlyRank ML Internship that processes
-          <strong>79M+ search records</strong> to identify decaying content and prioritize refresh opportunities
-          using feature engineering, leakage-safe validation, and automated action queues.
-        </p>
-
-        <div class="buttons">
-          <a class="btn" href="projects.html">Project Details</a>
-          <a class="btn" href="https://github.com/ramyaa-hegde/flyrank-ml-internship-tasks" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
-        </div>
+      <div class="skills-grid">
+        <span class="tag">Python</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">DuckDB</span>
+        <span class="tag">Data Analysis</span>
+        <span class="tag">Feature Engineering</span>
+        <span class="tag">Model Validation</span>
+        <span class="tag">Search Intelligence</span>
+        <span class="tag">AI Agents</span>
+        <span class="tag">Prompt Engineering</span>
+        <span class="tag">GitHub</span>
+        <span class="tag">GitHub Actions</span>
       </div>
     </section>
 
     <footer>
-      Built with HTML and CSS · Hosted on GitHub Pages
+      Building at the intersection of operations, data, machine learning, and AI.
     </footer>
 
   </div>
