@@ -1,451 +1,615 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%232563eb%22/><text x=%2250%22 y=%2267%22 font-size=%2250%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22 font-weight=%22bold%22>RH</text></svg>">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ramya Hegde | AI/ML Engineering & Data Science</title>
+<meta name="description" content="Ramya Hegde builds practical machine learning and AI systems for search intelligence, analytics and operational decision support.">
+<style>
+:root{
+  --navy:#071a35;
+  --navy2:#0b2852;
+  --blue:#2563eb;
+  --cyan:#22d3ee;
+  --paper:#f7faff;
+  --ink:#10233f;
+  --muted:#5e7189;
+  --line:#d8e5f2;
+  --white:#fff;
+  --shadow:0 20px 55px rgba(8,35,72,.11)
+}
 
-  <title>Ramya Hegde | AI/ML & Data Science Portfolio</title>
+*{
+  box-sizing:border-box
+}
+html{
+  scroll-behavior:smooth
+}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.65
+}
+a{
+  color:inherit;
+  text-decoration:none
+}
+.shell{
+  width:min(1180px,calc(100% - 40px));
+  margin:auto
+}
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(247,250,255,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line)
+}
+.nav{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:800
+}
+.mark{
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--blue),var(--cyan));
+  color:white
+}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:28px
+}
+.nav-links a{
+  font-size:14px;
+  font-weight:700;
+  color:#40546d
+}
+.nav-links a:hover,.nav-links .active{
+  color:var(--blue)
+}
+.nav-cta{
+  padding:10px 16px;
+  border:1px solid #9ab5d1;
+  border-radius:999px
+}
+.hero{
+  background:radial-gradient(circle at 88% 12%,rgba(34,211,238,.16),transparent 25%),linear-gradient(135deg,var(--navy),var(--navy2));
+  color:white;
+  padding:104px 0 88px
+}
+.eyebrow{
+  color:#67e8f9;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.17em;
+  text-transform:uppercase
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.4fr .6fr;
+  gap:70px;
+  align-items:center
+}
+.hero h1{
+  font-size:clamp(52px,7vw,88px);
+  line-height:.96;
+  letter-spacing:-.055em;
+  margin:20px 0
+}
+.hero h1 span{
+  color:#a7cef2
+}
+.hero .lead{
+  font-size:21px;
+  color:#c7d9eb;
+  max-width:760px
+}
+.role-line{
+  color:#8fe8f5;
+  font-weight:700
+}
+.actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:30px
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 19px;
+  border-radius:9px;
+  border:1px solid #9db3cc;
+  font-weight:800;
+  font-size:14px;
+  background:white;
+  color:var(--ink)
+}
+.btn.primary{
+  background:var(--blue);
+  border-color:var(--blue);
+  color:white
+}
+.btn.dark{
+  background:transparent;
+  color:white;
+  border-color:#52779d
+}
+.proof-panel{
+  border:1px solid #31577d;
+  border-radius:24px;
+  padding:28px;
+  background:rgba(4,22,46,.48)
+}
+.proof-panel span{
+  display:block;
+  color:#8ba4bf;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.12em
+}
+.proof-panel strong{
+  display:block;
+  font-size:34px;
+  color:#67e8f9;
+  margin:5px 0 18px
+}
+.section{
+  padding:90px 0
+}
+.section.alt{
+  background:white
+}
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  align-items:end;
+  margin-bottom:36px
+}
+.section h1,.section h2{
+  letter-spacing:-.04em;
+  line-height:1.08;
+  margin:0
+}
+.section h1{
+  font-size:clamp(44px,6vw,70px)
+}
+.section h2{
+  font-size:clamp(34px,4vw,54px)
+}
+.section-head p{
+  max-width:560px;
+  color:var(--muted);
+  margin:0
+}
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px
+}
+.card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:30px;
+  box-shadow:var(--shadow)
+}
+.card.featured{
+  grid-column:1/-1;
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:40px;
+  background:linear-gradient(135deg,#fff,#edf5ff)
+}
+.kicker{
+  font-size:11px;
+  color:var(--blue);
+  font-weight:900;
+  letter-spacing:.13em;
+  text-transform:uppercase
+}
+.card h3{
+  font-size:27px;
+  line-height:1.2;
+  margin:12px 0
+}
+.card p{
+  color:var(--muted)
+}
+.metrics{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px
+}
+.metric{
+  padding:17px;
+  border:1px solid #c6d9ed;
+  border-radius:13px;
+  background:#f8fbff
+}
+.metric strong{
+  display:block;
+  color:var(--blue);
+  font-size:23px
+}
+.metric span{
+  font-size:12px;
+  color:var(--muted)
+}
+.tags{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:22px 0
+}
+.tag{
+  padding:7px 11px;
+  border-radius:999px;
+  background:#eaf2ff;
+  color:#2458a3;
+  font-size:12px;
+  font-weight:750
+}
+.status{
+  display:inline-flex;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#fff4d7;
+  color:#9a5d00;
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase
+}
+.skill-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px
+}
+.skill-group{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:23px;
+  background:white
+}
+.skill-group h3{
+  margin:0 0 12px;
+  font-size:17px
+}
+.skill-group p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px
+}
+.story{
+  display:grid;
+  grid-template-columns:.75fr 1.25fr;
+  gap:70px
+}
+.story-aside{
+  padding:28px;
+  border-radius:20px;
+  background:var(--navy);
+  color:white
+}
+.story-aside strong{
+  display:block;
+  color:#67e8f9;
+  font-size:25px;
+  margin-bottom:6px
+}
+.story-aside p{
+  color:#b9cce0
+}
+.prose{
+  font-size:18px
+}
+.prose p{
+  color:#445b74
+}
+.timeline{
+  border-left:2px solid #bcd2e8;
+  padding-left:25px
+}
+.timeline article{
+  margin-bottom:30px
+}
+.timeline h3{
+  margin:0
+}
+.timeline small{
+  color:var(--blue);
+  font-weight:800
+}
+.contact-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:22px
+}
+.contact-card{
+  padding:35px;
+  border-radius:20px;
+  background:var(--navy);
+  color:white
+}
+.contact-card p{
+  color:#bed0e2
+}
+.contact-links{
+  display:grid;
+  gap:12px
+}
+.contact-links a{
+  padding:18px;
+  border:1px solid #31577d;
+  border-radius:12px;
+  font-weight:750
+}
+.contact-links a:hover{
+  border-color:var(--cyan);
+  color:#67e8f9
+}
+.notice{
+  padding:16px;
+  border-left:4px solid var(--blue);
+  background:#eaf2ff;
+  color:#38516c
+}
+.footer{
+  padding:35px 0;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:13px
+}
+.footer-row{
+  display:flex;
+  justify-content:space-between;
+  gap:20px
+}
+.mobile-toggle{
+  display:none
+}
 
-  <meta
-    name="description"
-    content="Portfolio of Ramya Hegde — Senior Operations Analyst transitioning into AI/ML through applied machine learning, search intelligence, AI agents, and data science."
-  />
+@media(max-width:820px){
+  .hero-grid,.card.featured,.story,.contact-grid{
+  grid-template-columns:1fr
+}
+.proof-panel{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px
+}
+.proof-panel strong{
+  margin-bottom:0
+}
+.skill-grid{
+  grid-template-columns:repeat(2,1fr)
+}
+.nav-links{
+  gap:14px
+}
+.hero{
+  padding-top:75px
+}
 
-  <!-- Social sharing metadata -->
-  <meta property="og:title" content="Ramya Hegde | AI/ML & Data Science Portfolio" />
-  <meta
-    property="og:description"
-    content="Portfolio of Ramya Hegde — applied machine learning, search intelligence, AI agents, and data science projects."
-  />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ramyaa-hegde.netlify.app/" />
+}
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+@media(max-width:600px){
+  .shell{
+  width:min(100% - 28px,1180px)
+}
+.nav{
+  height:auto;
+  min-height:76px;
+  align-items:flex-start;
+  padding:16px 0
+}
+.nav-links{
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  gap:9px 14px
+}
+.nav-links a{
+  font-size:12px
+}
+.nav-cta{
+  display:none
+}
+.brand span:last-child{
+  display:none
+}
+.hero h1{
+  font-size:49px
+}
+.hero .lead{
+  font-size:18px
+}
+.proof-panel,.project-grid,.skill-grid{
+  grid-template-columns:1fr
+}
+.section{
+  padding:66px 0
+}
+.section-head{
+  display:block
+}
+.section-head p{
+  margin-top:15px
+}
+.actions .btn{
+  width:100%
+}
+.footer-row{
+  display:block
+}
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: #f8fafc;
-      color: #0f172a;
-      line-height: 1.7;
-    }
+}
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 32px 24px;
-    }
 
-    nav {
-      display: flex;
-      justify-content: flex-end;
-      gap: 24px;
-      margin-bottom: 48px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #334155;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      color: #2563eb;
-    }
-
-    .hero {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      padding: 48px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-    }
-
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 12px;
-    }
-
-    .subtitle {
-      color: #2563eb;
-      font-weight: 600;
-      margin-bottom: 24px;
-    }
-
-    p {
-      margin-bottom: 18px;
-      color: #334155;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 24px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 18px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid #cbd5e1;
-      color: #0f172a;
-      background: white;
-    }
-
-    .btn.primary {
-      background: #2563eb;
-      color: white;
-      border-color: #2563eb;
-    }
-
-    .btn:hover {
-      opacity: 0.92;
-    }
-
-    .section {
-      margin-top: 56px;
-    }
-
-    .section h2 {
-      font-size: 1.5rem;
-      margin-bottom: 8px;
-    }
-
-    .section-intro {
-      color: #64748b;
-      margin-bottom: 22px;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-
-    .project-card {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      padding: 28px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-    }
-
-    .project-card h3 {
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-    }
-
-    .project-card p {
-      margin-bottom: 14px;
-    }
-
-    .project-type {
-      color: #64748b;
-      font-size: 0.92rem;
-      font-weight: 600;
-      margin-bottom: 14px;
-    }
-
-    .tags {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-
-    .tag {
-      background: #eff6ff;
-      color: #1d4ed8;
-      border: 1px solid #bfdbfe;
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .impact {
-      background: #f8fafc;
-      border-left: 4px solid #2563eb;
-      padding: 14px 16px;
-      margin: 18px 0;
-      border-radius: 0 8px 8px 0;
-    }
-
-    .impact strong {
-      color: #0f172a;
-    }
-
-    .skills-grid {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    footer {
-      margin-top: 64px;
-      padding-top: 24px;
-      border-top: 1px solid #e2e8f0;
-      color: #64748b;
-      font-size: 0.95rem;
-      text-align: center;
-    }
-
-    @media (max-width: 640px) {
-      .container {
-        padding: 24px 18px;
-      }
-
-      .hero {
-        padding: 32px 24px;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      nav {
-        justify-content: center;
-        gap: 18px;
-        margin-bottom: 32px;
-      }
-
-      .project-card {
-        padding: 22px;
-      }
-    }
-  </style>
+</style>
 </head>
-
 <body>
-  <div class="container">
-
-    <!-- NAVIGATION -->
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-    <!-- MAIN PAGE CONTENT -->
-    <main>
-
-      <!-- HERO -->
-      <section class="hero">
-        <h1>Ramya Hegde</h1>
-
-        <div class="subtitle">
-          Senior Operations Analyst → AI/ML & Data Science
-        </div>
-
-        <p>
-          I build practical machine learning and AI systems that turn complex data
-          and technical work into useful decisions. My current work focuses on
-          search intelligence, machine learning pipelines, data analysis, and
-          AI-assisted automation.
-        </p>
-
-        <p>
-          I am building on my professional experience in operations analytics while
-          pursuing a BSc in Data Science & Analytics at Jain University and completing
-          applied AI/ML work through FlyRank.
-        </p>
-
-        <div class="buttons">
-          <a class="btn primary" href="#featured-work">View My Work</a>
-
-          <a
-            class="btn"
-            href="https://github.com/ramyaa-hegde"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-
-          <a
-            class="btn"
-            href="https://www.linkedin.com/in/ramyaahegde"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-        </div>
-      </section>
-
-      <!-- FEATURED WORK -->
-      <section class="section" id="featured-work">
-        <h2>Featured Work</h2>
-
-        <p class="section-intro">
-          Applied projects across machine learning, search intelligence, and AI agents.
-        </p>
-
-        <div class="project-grid">
-
-          <!-- ML PROJECT -->
-          <article class="project-card">
-
-            <div class="project-type">
-              MACHINE LEARNING · SEARCH INTELLIGENCE
-            </div>
-
-            <h3>
-              Search Intelligence Engine & Content Opportunity Scoring
-            </h3>
-
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">DuckDB</span>
-              <span class="tag">Machine Learning</span>
-              <span class="tag">Search Intelligence</span>
-              <span class="tag">GitHub Actions</span>
-            </div>
-
-            <p>
-              An end-to-end machine learning project built during the FlyRank ML
-              Internship using large-scale search-performance data. The workflow
-              processes <strong>79M+ search records</strong> and applies feature
-              engineering, model evaluation, leakage-aware validation, and automated
-              workflows to analyze content performance.
-            </p>
-
-            <div class="impact">
-              <strong>What it helps decide:</strong>
-              The system turns search-performance signals into ranked content
-              opportunities, helping identify which content should be prioritized
-              for review, refresh, or further investigation instead of relying only
-              on manual inspection.
-            </div>
-
-            <p>
-              The project emphasizes reproducible analysis and decision support rather
-              than claiming to predict Google's ranking algorithm.
-            </p>
-
-            <div class="buttons">
-              <a class="btn primary" href="projects.html">
-                View Case Study
-              </a>
-
-              <a
-                class="btn"
-                href="https://github.com/ramyaa-hegde/flyrank-ml-internship-tasks"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub Repository
-              </a>
-            </div>
-          </article>
-
-          <!-- SIPA PROJECT -->
-          <article class="project-card">
-
-            <div class="project-type">
-              AI AGENT · AI FLUENCY
-            </div>
-
-            <h3>
-              Search Intelligence Portfolio Agent (SIPA)
-            </h3>
-
-            <div class="tags">
-              <span class="tag">AI Agents</span>
-              <span class="tag">Prompt Engineering</span>
-              <span class="tag">GitHub</span>
-              <span class="tag">Technical Documentation</span>
-              <span class="tag">Career Automation</span>
-            </div>
-
-            <p>
-              SIPA is a personal AI agent designed to transform completed technical
-              projects into consistent, recruiter-ready portfolio assets.
-            </p>
-
-            <p>
-              Instead of manually rebuilding documentation for every project, the
-              agent analyzes project artifacts such as GitHub repositories, Jupyter
-              notebooks, README files, technical notes, and available evaluation
-              results to generate structured career-facing documentation.
-            </p>
-
-            <div class="impact">
-              <strong>Why I built it:</strong>
-              SIPA helps bridge the gap between doing technical work and clearly
-              communicating that work to recruiters, hiring managers, and interviewers.
-            </div>
-
-            <p>
-              The project was developed during the FlyRank AI Fluency track as the
-              MVP of a longer-term personal career operating system.
-            </p>
-
-            <div class="buttons">
-              <a
-                class="btn primary"
-                href="https://github.com/ramyaa-hegde/SIPA-Agent"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View SIPA
-              </a>
-
-              <a
-                class="btn"
-                href="https://github.com/ramyaa-hegde/SIPA-Agent"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub Repository
-              </a>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- TECHNICAL TOOLKIT -->
-      <section class="section">
-        <h2>Current Technical Toolkit</h2>
-
-        <p class="section-intro">
-          Technologies and practices demonstrated across my current projects.
-        </p>
-
-        <div class="skills-grid">
-          <span class="tag">Python</span>
-          <span class="tag">Machine Learning</span>
-          <span class="tag">DuckDB</span>
-          <span class="tag">Data Analysis</span>
-          <span class="tag">Feature Engineering</span>
-          <span class="tag">Model Validation</span>
-          <span class="tag">Search Intelligence</span>
-          <span class="tag">AI Agents</span>
-          <span class="tag">Prompt Engineering</span>
-          <span class="tag">GitHub</span>
-          <span class="tag">GitHub Actions</span>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-      Building at the intersection of operations, data, machine learning, and AI.
-    </footer>
-
-  </div>
+<header class="site-header">
+<nav class="nav shell">
+<a class="brand" href="index.html">
+<span class="mark">RH</span>
+<span>Ramya Hegde</span>
+</a>
+<div class="nav-links">
+<a class="active" href="index.html">Home</a>
+<a href="projects.html">Projects</a>
+<a href="about.html">About</a>
+<a class="nav-cta" href="contact.html">Contact</a>
+</div>
+</nav>
+</header>
+<main>
+<section class="hero">
+<div class="hero-grid shell">
+<div>
+<div class="eyebrow">AI/ML Engineering · Data Science · Operations</div>
+<h1>Building practical AI systems <span>for useful decisions.</span>
+</h1>
+<p class="lead">I turn large-scale search and operational data into machine-learning workflows, prioritized actions and clear technical evidence.</p>
+<p class="role-line">AI/ML Engineering Intern at FlyRank AI · Senior Operations Analyst · BSc Data Science & Analytics</p>
+<div class="actions">
+<a class="btn primary" href="projects.html">View projects</a>
+<a class="btn dark" href="https://github.com/ramyaa-hegde" target="_blank" rel="noopener">GitHub ↗</a>
+<a class="btn dark" href="https://www.linkedin.com/in/ramyaahegde" target="_blank" rel="noopener">LinkedIn ↗</a>
+</div>
+</div>
+<aside class="proof-panel" aria-label="Selected capstone evidence">
+<div>
+<span>Precision@20</span>
+<strong>0.90</strong>
+</div>
+<div>
+<span>Held-out clients</span>
+<strong>12</strong>
+</div>
+<div>
+<span>April items scored</span>
+<strong>107,144</strong>
+</div>
+<div>
+<span>Top-20 lift</span>
+<strong>3.6×</strong>
+</div>
+</aside>
+</div>
+</section>
+<section class="section alt">
+<div class="shell">
+<div class="section-head">
+<div>
+<div class="kicker">Featured evidence</div>
+<h2>Work with a decision behind it.</h2>
+</div>
+<p>My projects connect technical implementation with evaluation, limitations and the human decision the system is designed to support.</p>
+</div>
+<div class="project-grid">
+<article class="card featured">
+<div>
+<div class="kicker">Machine learning · Search intelligence</div>
+<h3>Google Search Ranking & Discoverability Capstone</h3>
+<p>A leakage-aware Random Forest system that uses February search and engagement signals to prioritize likely March CTR review opportunities across unseen pseudonymized clients.</p>
+<div class="tags">
+<span class="tag">Python</span>
+<span class="tag">DuckDB</span>
+<span class="tag">Scikit-learn</span>
+<span class="tag">Grouped validation</span>
+<span class="tag">Decision support</span>
+</div>
+<div class="actions">
+<a class="btn primary" href="https://ramyaa-hegde.github.io/flyrank-ml-internship-tasks/" target="_blank" rel="noopener">View case study ↗</a>
+<a class="btn" href="https://github.com/ramyaa-hegde/flyrank-ml-internship-tasks" target="_blank" rel="noopener">Source code ↗</a>
+</div>
+</div>
+<div class="metrics">
+<div class="metric">
+<strong>0.90</strong>
+<span>Model Precision@20</span>
+</div>
+<div class="metric">
+<strong>0.25</strong>
+<span>Baseline Precision@20</span>
+</div>
+<div class="metric">
+<strong>0.730</strong>
+<span>ROC-AUC</span>
+</div>
+<div class="metric">
+<strong>Human</strong>
+<span>Final review remains manual</span>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="kicker">AI agent · AI fluency</div>
+<h3>Search Intelligence Portfolio Agent (SIPA)</h3>
+<p>An AI-assisted workflow that transforms technical project artifacts into consistent, recruiter-ready documentation while retaining evidence and limitations.</p>
+<div class="actions">
+<a class="btn" href="https://github.com/ramyaa-hegde/SIPA-Agent" target="_blank" rel="noopener">View SIPA ↗</a>
+</div>
+</article>
+<article class="card">
+<span class="status">Currently building</span>
+<h3>Autonomous AI-Driven DevOps Log Analyzer</h3>
+<p>My Jain University degree project exploring intelligent log analysis and human-governed remediation workflows. It remains clearly marked in progress until the implementation and evaluation are substantial.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="shell">
+<div class="section-head">
+<div>
+<div class="kicker">Technical toolkit</div>
+<h2>Applied across real projects.</h2>
+</div>
+</div>
+<div class="skill-grid">
+<article class="skill-group">
+<h3>Machine learning</h3>
+<p>Scikit-learn, feature engineering, classification, ranking metrics and model interpretation.</p>
+</article>
+<article class="skill-group">
+<h3>Data engineering</h3>
+<p>Python, pandas, NumPy, DuckDB, SQL and reproducible notebook pipelines.</p>
+</article>
+<article class="skill-group">
+<h3>AI systems</h3>
+<p>AI agents, prompt engineering, workflow automation and technical documentation.</p>
+</article>
+<article class="skill-group">
+<h3>Delivery</h3>
+<p>Git, GitHub, GitHub Actions, stakeholder communication and operational decision support.</p>
+</article>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="footer-row shell">
+<span>© 2026 Ramya Hegde</span>
+<span>Operations perspective · AI/ML engineering direction</span>
+</div>
+</footer>
 </body>
 </html>
