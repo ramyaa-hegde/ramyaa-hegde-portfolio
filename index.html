@@ -6,98 +6,74 @@
   <title>Ramya Hegde | Senior Operations Analyst & Aspiring AI/ML Engineer</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="fixed-screen-body">
 
-  <!-- Top Navigation Bar -->
-  <header class="navbar">
+  <!-- Top Dark Header Bar (Clearly Distinct) -->
+  <header class="navbar-dark">
     <div class="nav-brand-group">
-      <span style="font-weight: 700; font-size: 1.1rem;">Ramya Hegde</span>
+      <span class="nav-brand-name">Ramya Hegde</span>
       <span class="nav-title-tag">[ Senior Operations Analyst ]</span>
     </div>
     
-    <!-- Top Icons: Desktop, Mobile, Home -->
-    <div class="view-mode-switcher">
-      <button onclick="setViewMode('desktop')" title="Desktop View" class="view-icon-btn">💻</button>
-      <button onclick="setViewMode('mobile')" title="Mobile View" class="view-icon-btn">📱</button>
-      <a href="index.html" title="Home" class="view-icon-btn" style="text-decoration: none;">🏠</a>
-    </div>
-
-    <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
-    
-    <nav class="nav-links">
-      <a href="index.html" style="color: var(--accent-color);">Home</a>
+    <nav class="nav-links-top">
+      <a href="index.html" class="active-link">About Me</a>
       <a href="experience.html">Experience &amp; Education</a>
       <a href="projects.html">Projects &amp; Certifications</a>
-      <a href="https://github.com/ramyaa-hegde" target="_blank" rel="noopener">GitHub</a>
-      <a href="Ramya_Hegde_Resume.pdf" target="_blank" rel="noopener" class="btn-primary">Resume</a>
+      <a href="mailto:ramyahegde18@gmail.com">Contact</a>
     </nav>
   </header>
 
-  <div class="container" id="page-container">
-    
-    <!-- HERO SECTION -->
-    <section class="hero-section">
-      <div class="hero-left-card">
-        <h1 class="hero-hello">Hello</h1>
-        <div class="hero-profile-box">
-          <div class="hero-avatar-placeholder">RH</div>
+  <!-- Main Screen Container (No Scrolling) -->
+  <main class="single-viewport-container">
+    <div class="hero-card-layout">
+      
+      <!-- Left Purple Box with "Hello" and Profile Box -->
+      <div class="hero-left-box">
+        <h1 class="hero-hello-text">Hello</h1>
+        
+        <div class="profile-card-mini">
+          <div class="avatar-circle">RH</div>
           <div>
-            <h2 style="margin:0; font-size: 1.1rem;">Ramya Hegde</h2>
-            <p style="margin:0; color:var(--text-muted); font-size: 0.85rem;">Senior Operations Analyst</p>
+            <h3 class="profile-mini-name">Ramya Hegde</h3>
+            <p class="profile-mini-title">Senior Operations Analyst</p>
           </div>
         </div>
       </div>
       
-      <div class="hero-right-content">
-        <p class="hero-welcome">Welcome to my portfolio</p>
-        <h1 class="hero-name">Ramya Hegde</h1>
-        <p class="hero-subtitle">Senior Operations Analyst | Aspiring AI/ML Engineer</p>
-        
-        <p class="hero-desc">
+      <!-- Right Content Box matching sample typography -->
+      <div class="hero-right-box">
+        <p class="intro-paragraph">
           Bridging the gap between high-volume operations and intelligent machine learning systems, turning operational complexity into streamlined data pipelines and robust system building.
         </p>
 
-        <div class="hero-buttons">
-          <a href="Ramya_Hegde_Resume.pdf" target="_blank" rel="noopener" class="btn-primary">Download Resume</a>
-          <a href="mailto:ramyahegde18@gmail.com" class="btn-primary">Get in Touch</a>
+        <p class="intro-paragraph secondary-desc">
+          This is a great place to introduce yourself, share what you do and what makes your work truly unique.
+        </p>
+
+        <div class="hero-action-buttons">
+          <a href="Ramya_Hegde_Resume.pdf" target="_blank" rel="noopener" class="btn-pill-dark">Resume</a>
+          <a href="projects.html" class="btn-pill-light">Projects</a>
         </div>
       </div>
-    </section>
 
-  </div>
-
-  <!-- STICKY BOTTOM BAR -->
-  <footer class="sticky-bottom-bar">
-    <div class="sticky-info">
-      <span><strong>Let’s Connect:</strong> <a href="mailto:ramyahegde18@gmail.com" class="sticky-mail-link">ramyahegde18@gmail.com</a></span>
     </div>
-    <div class="sticky-actions">
-      <a href="https://github.com/ramyaa-hegde" target="_blank" rel="noopener" class="sticky-link">GitHub</a>
+  </main>
+
+  <!-- Distinct Dark Footer Bar -->
+  <footer class="footer-dark">
+    <div class="footer-left">
+      <span>ramyahegde18@gmail.com</span>
+      <span>&bull;</span>
+      <span>Accessibility Statement</span>
+    </div>
+    <div class="footer-center">
+      <a href="https://github.com/ramyaa-hegde" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:ramyahegde18@gmail.com">Email</a>
+    </div>
+    <div class="footer-right">
+      &copy; 2026 Ramya Hegde. Powered &amp; secured.
     </div>
   </footer>
 
-  <script>
-    const btn = document.querySelector('.mobile-menu-btn');
-    const nav = document.querySelector('.nav-links');
-    btn.addEventListener('click', () => { nav.classList.toggle('active'); });
-
-    function setViewMode(mode) {
-      const container = document.getElementById('page-container');
-      if (mode === 'mobile') {
-        container.style.maxWidth = '400px';
-        container.style.margin = '24px auto';
-        container.style.border = '12px solid #191919';
-        container.style.borderRadius = '32px';
-        container.style.padding = '16px';
-        container.style.background = '#ffffff';
-      } else {
-        container.style.maxWidth = '1040px';
-        container.style.margin = '24px auto';
-        container.style.border = 'none';
-        container.style.borderRadius = '0';
-        container.style.padding = '0 16px';
-      }
-    }
-  </script>
 </body>
 </html>
