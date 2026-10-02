@@ -6,12 +6,20 @@
   <title>Ramya Hegde | Senior Operations Analyst & AI/ML Engineer</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="site-body">
 
   <!-- Top Sticky Navigation Bar -->
   <header class="navbar">
     <a href="#home" class="nav-brand">Ramya Hegde</a>
+    
+    <!-- Laptop / Mobile View Switcher Icons -->
+    <div class="view-mode-switcher">
+      <button onclick="setViewMode('desktop')" title="Laptop View" class="view-icon-btn">💻</button>
+      <button onclick="setViewMode('mobile')" title="Mobile View" class="view-icon-btn">📱</button>
+    </div>
+
     <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
+    
     <nav class="nav-links">
       <a href="#home">Home</a>
       <a href="#about">About</a>
@@ -54,18 +62,18 @@
       
       <div class="timeline-item">
         <div>
-          <h3>AI/ML Engineering Intern</h3>
-          <p>FlyRank AI</p>
-        </div>
-        <time>Jul 2026 - Sep 2026</time>
-      </div>
-
-      <div class="timeline-item">
-        <div>
           <h3>Senior Operations Analyst</h3>
           <p>First Advantage</p>
         </div>
         <time>Jun 2023 - Present</time>
+      </div>
+
+      <div class="timeline-item">
+        <div>
+          <h3>AI/ML Engineering Intern</h3>
+          <p>FlyRank AI</p>
+        </div>
+        <time>Jul 2026 - Sep 2026</time>
       </div>
 
       <div class="timeline-item">
@@ -127,7 +135,7 @@
       </div>
     </section>
 
-    <!-- PROJECTS SECTION (Clickable link card pointing to separate page) -->
+    <!-- PROJECTS SECTION -->
     <section id="projects" class="section">
       <h2>Projects</h2>
       <a href="projects.html" class="project-preview-card">
@@ -141,13 +149,12 @@
 
   </div>
 
-  <!-- STATIC BOTTOM BAR (Always Visible While Scrolling) -->
+  <!-- STATIC BOTTOM BAR (Let's Connect / Email / CV / GitHub) -->
   <footer class="sticky-bottom-bar">
     <div class="sticky-info">
-      <span><strong>Ramya Hegde</strong> &bull; Bengaluru, India</span>
+      <span><strong>Let's Connect:</strong> <a href="mailto:ramyahegde18@gmail.com" style="color: var(--accent-color); text-decoration: none; font-weight: 600;">ramyahegde18@gmail.com</a></span>
     </div>
     <div class="sticky-actions">
-      <a href="mailto:ramyahegde18@gmail.com" class="sticky-link">Email</a>
       <a href="https://github.com/ramyaa-hegde" target="_blank" rel="noopener" class="sticky-link">GitHub</a>
       <a href="Ramya_Hegde_Resume.pdf" target="_blank" rel="noopener" class="btn-primary" style="padding: 6px 14px; font-size: 0.85rem;">Download CV</a>
     </div>
@@ -157,6 +164,25 @@
     const btn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('.nav-links');
     btn.addEventListener('click', () => { nav.classList.toggle('active'); });
+
+    // Interactive View Mode Switcher script
+    function setViewMode(mode) {
+      const container = document.querySelector('.container');
+      if (mode === 'mobile') {
+        container.style.maxWidth = '400px';
+        container.style.margin = '0 auto';
+        container.style.border = '10px solid #333';
+        container.style.borderRadius = '30px';
+        container.style.padding = '20px';
+        container.style.background = '#fff';
+      } else {
+        container.style.maxWidth = '1100px';
+        container.style.margin = '0 auto';
+        container.style.border = 'none';
+        container.style.borderRadius = '0';
+        container.style.padding = '40px 20px';
+      }
+    }
   </script>
 </body>
 </html>
