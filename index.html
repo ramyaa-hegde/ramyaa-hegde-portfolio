@@ -6,39 +6,37 @@
   <title>Ramya Hegde | Senior Operations Analyst & Aspiring AI/ML Engineer</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body id="site-body">
+<body>
 
-  <!-- Top Sticky Navigation Bar -->
+  <!-- Top Navigation Bar -->
   <header class="navbar">
     <div class="nav-brand-group">
       <span style="font-weight: 700; font-size: 1.1rem;">Ramya Hegde</span>
       <span class="nav-title-tag">[ Senior Operations Analyst ]</span>
     </div>
     
-    <!-- View Mode Switchers -->
+    <!-- Top Icons: Desktop, Mobile, Home -->
     <div class="view-mode-switcher">
       <button onclick="setViewMode('desktop')" title="Desktop View" class="view-icon-btn">💻</button>
       <button onclick="setViewMode('mobile')" title="Mobile View" class="view-icon-btn">📱</button>
-      <a href="#home" title="Home" class="view-icon-btn" style="text-decoration: none;">🏠</a>
+      <a href="index.html" title="Home" class="view-icon-btn" style="text-decoration: none;">🏠</a>
     </div>
 
     <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
     
     <nav class="nav-links">
-      <a href="#about">About Me</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#certifications">Certifications</a>
-      <a href="projects.html">Projects</a>
+      <a href="index.html" style="color: var(--accent-color);">Home</a>
+      <a href="experience.html">Experience &amp; Education</a>
+      <a href="projects.html">Projects &amp; Certifications</a>
       <a href="https://github.com/ramyaa-hegde" target="_blank" rel="noopener">GitHub</a>
       <a href="Ramya_Hegde_Resume.pdf" target="_blank" rel="noopener" class="btn-primary">Resume</a>
     </nav>
   </header>
 
-  <div class="container" id="main-container">
+  <div class="container" id="page-container">
     
     <!-- HERO SECTION -->
-    <section id="home" class="hero-section">
+    <section class="hero-section">
       <div class="hero-left-card">
         <h1 class="hero-hello">Hello</h1>
         <div class="hero-profile-box">
@@ -55,7 +53,7 @@
         <h1 class="hero-name">Ramya Hegde</h1>
         <p class="hero-subtitle">Senior Operations Analyst | Aspiring AI/ML Engineer</p>
         
-        <p class="hero-desc" id="about">
+        <p class="hero-desc">
           Bridging the gap between high-volume operations and intelligent machine learning systems, turning operational complexity into streamlined data pipelines and robust system building.
         </p>
 
@@ -64,97 +62,6 @@
           <a href="mailto:ramyahegde18@gmail.com" class="btn-primary">Get in Touch</a>
         </div>
       </div>
-    </section>
-
-    <!-- EXPERIENCE SECTION -->
-    <section id="experience" class="section">
-      <h2>Experience</h2>
-      
-      <div class="card-item">
-        <div class="card-header-row">
-          <h3>Senior Operations Analyst</h3>
-          <span class="card-date">Jun 2023 - Present</span>
-        </div>
-        <p class="card-subtitle">First Advantage</p>
-      </div>
-
-      <div class="card-item">
-        <div class="card-header-row">
-          <h3>AI/ML Engineering Intern</h3>
-          <span class="card-date">Jul 2026 - Sep 2026</span>
-        </div>
-        <p class="card-subtitle">FlyRank AI</p>
-      </div>
-
-      <div class="card-item">
-        <div class="card-header-row">
-          <h3>Business Operations Analyst</h3>
-          <span class="card-date">Mar 2022 - May 2023</span>
-        </div>
-        <p class="card-subtitle">Dunzo</p>
-      </div>
-
-      <div class="card-item">
-        <div class="card-header-row">
-          <h3>Operational Specialist</h3>
-          <span class="card-date">Jan 2021 - Mar 2022</span>
-        </div>
-        <p class="card-subtitle">Reliance Jio</p>
-      </div>
-    </section>
-
-    <!-- EDUCATION SECTION -->
-    <section id="education" class="section">
-      <h2>Education</h2>
-      
-      <div class="card-item">
-        <div class="card-header-row">
-          <h3>B.Sc. in Data Science and Analytics</h3>
-          <span class="card-date">2025 - 2028</span>
-        </div>
-        <p class="card-subtitle">Jain University</p>
-      </div>
-
-      <div class="card-item">
-        <div class="card-header-row">
-          <h3>Diploma in Civil Engineering</h3>
-          <span class="card-date">2017 - 2020</span>
-        </div>
-        <p class="card-subtitle">Government Women's Polytechnic</p>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS SECTION -->
-    <section id="certifications" class="section">
-      <h2>Certifications</h2>
-      
-      <div class="card-item">
-        <div class="card-header-row">
-          <h3>Machine Learning Internship Program</h3>
-          <span class="card-date">Oct 2026</span>
-        </div>
-        <p class="card-subtitle">FlyRank AI &bull; <a href="https://internship.flyrank.ai/verify" target="_blank" rel="noopener" style="color:var(--accent-color); text-decoration:none;">Verify ID: FR-D11-B55A0-891DD</a></p>
-      </div>
-
-      <div class="card-item">
-        <div class="card-header-row">
-          <h3>AI Fluency Internship Program</h3>
-          <span class="card-date">Oct 2026</span>
-        </div>
-        <p class="card-subtitle">FlyRank AI &bull; <a href="https://internship.flyrank.ai/verify" target="_blank" rel="noopener" style="color:var(--accent-color); text-decoration:none;">Verify ID: FR-D11-EC35C-51C18</a></p>
-      </div>
-    </section>
-
-    <!-- PROJECTS PREVIEW -->
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <a href="projects.html" class="project-preview-card">
-        <div>
-          <h3>Explore Technical Projects &amp; Systems &rarr;</h3>
-          <p>Search Intelligence Scoring, Machine Learning Pipelines, and AIOps Systems.</p>
-        </div>
-        <span class="btn-outline">View Projects</span>
-      </a>
     </section>
 
   </div>
@@ -175,20 +82,20 @@
     btn.addEventListener('click', () => { nav.classList.toggle('active'); });
 
     function setViewMode(mode) {
-      const container = document.getElementById('main-container');
+      const container = document.getElementById('page-container');
       if (mode === 'mobile') {
         container.style.maxWidth = '400px';
-        container.style.margin = '0 auto';
+        container.style.margin = '24px auto';
         container.style.border = '12px solid #191919';
         container.style.borderRadius = '32px';
-        container.style.padding = '20px';
+        container.style.padding = '16px';
         container.style.background = '#ffffff';
       } else {
-        container.style.maxWidth = '1100px';
-        container.style.margin = '0 auto';
+        container.style.maxWidth = '1040px';
+        container.style.margin = '24px auto';
         container.style.border = 'none';
         container.style.borderRadius = '0';
-        container.style.padding = '40px 20px';
+        container.style.padding = '0 16px';
       }
     }
   </script>
