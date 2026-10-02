@@ -2,13 +2,13 @@
   --bg-color: #ffffff;
   --text-main: #0f172a;
   --text-muted: #475569;
-  --accent-color: #ef4444; /* Clean Red Theme matching reference */
+  --accent-color: #ef4444;
   --border-color: #e2e8f0;
 }
 
 body {
   margin: 0;
-  padding: 0 0 80px 0; /* Extra padding at bottom so content isn't hidden under sticky bar */
+  padding: 0 0 90px 0;
   font-family: system-ui, -apple-system, sans-serif;
   color: var(--text-main);
   background-color: var(--bg-color);
@@ -38,7 +38,7 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   align-items: center;
 }
 
@@ -46,17 +46,25 @@ body {
   text-decoration: none;
   color: var(--text-muted);
   font-weight: 500;
-  font-size: 0.95srem;
+  font-size: 0.95rem;
 }
 
 .nav-links a:hover {
   color: var(--accent-color);
 }
 
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 .btn-primary {
   background-color: var(--accent-color);
   color: #fff !important;
-  padding: 10px 20px;
+  padding: 8px 18px;
   border-radius: 6px;
   font-weight: 600;
   text-decoration: none;
@@ -70,31 +78,37 @@ body {
 .btn-outline {
   border: 2px solid var(--text-main);
   color: var(--text-main);
-  padding: 10px 20px;
+  padding: 8px 18px;
   border-radius: 6px;
   font-weight: 600;
   text-decoration: none;
+  display: inline-block;
 }
 
-/* Main Container */
+.btn-outline:hover {
+  background: var(--text-main);
+  color: #fff;
+}
+
+/* Container */
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 40px 20px;
 }
 
-/* Hero Section (Split Layout) */
+/* Hero Section */
 .hero-section {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 40px;
   align-items: center;
-  padding: 40px 0 80px 0;
+  padding: 20px 0 60px 0;
   border-bottom: 1px solid var(--border-color);
 }
 
 .hero-text h1 {
-  font-size: 3.2rem;
+  font-size: 3rem;
   line-height: 1.15;
   margin: 0 0 20px 0;
   font-weight: 800;
@@ -119,9 +133,9 @@ body {
   gap: 16px;
 }
 
-/* Sections Styling */
+/* Sections */
 .section {
-  padding: 60px 0;
+  padding: 50px 0;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -136,7 +150,7 @@ body {
   align-items: flex-start;
   background: #f8fafc;
   border: 1px solid var(--border-color);
-  padding: 24px;
+  padding: 20px 24px;
   border-radius: 10px;
   margin-bottom: 16px;
 }
@@ -157,7 +171,77 @@ body {
   font-size: 0.9rem;
 }
 
-/* STICKY BOTTOM BAR (Always Visible While Scrolling) */
+/* Project Cards & Details */
+.project-preview-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.project-preview-card:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.project-preview-card h3 {
+  margin: 0 0 6px 0;
+  color: var(--accent-color);
+}
+
+.project-preview-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.project-detail-box {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.project-detail-box h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.project-bullets {
+  margin: 12px 0 0 20px;
+  color: var(--text-muted);
+}
+
+.project-bullets li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.badge.public {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge.progress {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+/* STATIC BOTTOM BAR (Pinned & Non-moving while scrolling) */
 .sticky-bottom-bar {
   position: fixed;
   bottom: 0;
@@ -175,34 +259,70 @@ body {
 }
 
 .sticky-info {
-  font-weight: 600;
   font-size: 0.95rem;
 }
 
 .sticky-actions {
   display: flex;
-  gap: 12px;
+  gap: 16px;
+  align-items: center;
 }
 
-/* Mobile Responsiveness */
+.sticky-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.sticky-link:hover {
+  color: var(--accent-color);
+}
+
+/* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
   .navbar {
-    padding: 16px 20px;
+    padding: 14px 20px;
+  }
+  .mobile-menu-btn {
+    display: block;
   }
   .nav-links {
-    display: none; /* Can be expanded with mobile toggle if needed */
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+  }
+  .nav-links.active {
+    display: flex;
   }
   .hero-section {
     grid-template-columns: 1fr;
     gap: 30px;
+    padding-top: 10px;
   }
   .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
+  }
+  .timeline-item {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .project-preview-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
   .sticky-bottom-bar {
     padding: 12px 16px;
   }
   .sticky-info {
-    display: none; /* Hide text on small screens to save space */
+    font-size: 0.85rem;
   }
 }
