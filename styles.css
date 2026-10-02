@@ -1,16 +1,16 @@
 :root {
-  --bg-color: #f4f2ee; /* LinkedIn light background */
+  --bg-color: #f4f2ee;
   --card-bg: #ffffff;
   --text-main: #191919;
   --text-muted: #666666;
-  --accent-color: #0a66c2; /* LinkedIn professional blue */
+  --accent-color: #0a66c2;
   --border-color: #e0dfdc;
 }
 
 body {
   margin: 0;
   padding: 0 0 85px 0;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: var(--text-main);
   background-color: var(--bg-color);
   line-height: 1.5;
@@ -108,21 +108,6 @@ body {
   background-color: #004182;
 }
 
-.btn-outline {
-  border: 1.5px solid var(--accent-color);
-  color: var(--accent-color);
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.btn-outline:hover {
-  background: rgba(10, 102, 194, 0.05);
-}
-
 /* Container */
 .container {
   max-width: 1040px;
@@ -141,7 +126,6 @@ body {
   border-radius: 12px;
   padding: 32px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-  margin-bottom: 24px;
 }
 
 .hero-left-card {
@@ -271,36 +255,6 @@ body {
   font-weight: 500;
 }
 
-/* Project Cards */
-.project-preview-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--bg-color);
-  border: 1px solid var(--border-color);
-  padding: 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: inherit;
-  transition: background 0.2s;
-}
-
-.project-preview-card:hover {
-  background: #eae7df;
-}
-
-.project-preview-card h3 {
-  margin: 0 0 4px 0;
-  color: var(--accent-color);
-  font-size: 1rem;
-}
-
-.project-preview-card p {
-  margin: 0;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-}
-
 .project-bullets {
   margin: 8px 0 0 18px;
   color: var(--text-muted);
@@ -407,11 +361,6 @@ body {
   .card-header-row {
     flex-direction: column;
     gap: 2px;
-  }
-  .project-preview-card {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
   }
   .sticky-bottom-bar {
     padding: 10px 16px;
