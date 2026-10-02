@@ -10,20 +10,23 @@
 
   <!-- Top Sticky Navigation Bar -->
   <header class="navbar">
-    <a href="index.html" class="nav-brand">Ramya Hegde</a>
+    <div class="nav-brand-group">
+      <span style="font-weight: 700; font-size: 1.1rem;">Ramya Hegde</span>
+      <span class="nav-title-tag">[ Senior Operations Analyst ]</span>
+    </div>
     <div class="view-mode-switcher">
       <button onclick="setViewMode('desktop')" title="Desktop View" class="view-icon-btn">💻</button>
       <button onclick="setViewMode('mobile')" title="Mobile View" class="view-icon-btn">📱</button>
       <a href="index.html#home" title="Home" class="view-icon-btn" style="text-decoration: none;">🏠</a>
     </div>
     <nav class="nav-links">
-      <a href="index.html#about">About</a>
+      <a href="index.html#about">About Me</a>
       <a href="index.html#experience">Experience</a>
       <a href="index.html#education">Education</a>
       <a href="index.html#certifications">Certifications</a>
       <a href="projects.html" style="color: var(--accent-color);">Projects</a>
       <a href="https://github.com/ramyaa-hegde" target="_blank" rel="noopener">GitHub</a>
-      <a href="Ramya_Hegde_Resume.pdf" target="_blank" rel="noopener" class="btn-primary">Download Resume</a>
+      <a href="Ramya_Hegde_Resume.pdf" target="_blank" rel="noopener" class="btn-primary">Resume</a>
     </nav>
   </header>
 
@@ -31,40 +34,39 @@
     <section class="section" style="border: none;">
       <h2>Projects</h2>
       
-      <div class="project-detail-box">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
+      <div class="card-item" style="margin-bottom: 24px;">
+        <div class="card-header-row">
           <h3>Search Intelligence Engine &amp; Content Opportunity Scoring</h3>
           <span class="badge public">Public Project</span>
         </div>
-        <p style="margin: 6px 0 16px 0;"><a href="https://github.com/ramyaa-hegde/flyrank-ml-internship-tasks" target="_blank" rel="noopener" style="color: var(--accent-color); text-decoration: none; font-weight: 500;">GitHub: github.com/ramyaa-hegde/flyrank-ml-internship-tasks &rarr;</a></p>
+        <p style="margin: 6px 0 12px 0;"><a href="https://github.com/ramyaa-hegde/flyrank-ml-internship-tasks" target="_blank" rel="noopener" style="color: var(--accent-color); text-decoration: none; font-weight: 500;">GitHub Repository &rarr;</a></p>
         
         <ul class="project-bullets">
           <li>Tested whether February search and engagement signals could prioritize content likely to fall below the CTR benchmark in March better than a transparent February-only baseline.</li>
-          <li>Built a grouped-validation pipeline, ran a leakage audit, and converted model scores into a human-review framework with monitoring and retraining triggers.</li>
-          <li>Random Forest achieved Precision@20 of 0.900 versus 0.250 for the baseline; published the research paper, notebooks, charts, and public-safe summaries.</li>
+          <li>Built a grouped-validation pipeline, ran a leakage audit, and converted model scores into a human-review framework with monitoring triggers.</li>
+          <li>Random Forest achieved Precision@20 of 0.900 versus 0.250 for the baseline; published documentation and notebooks.</li>
         </ul>
       </div>
 
-      <div class="project-detail-box" style="margin-top: 30px;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
+      <div class="card-item">
+        <div class="card-header-row">
           <h3>Autonomous AI-Driven DevOps Log Analyzer &amp; Self-Healing System</h3>
           <span class="badge progress">In Progress</span>
         </div>
         
-        <ul class="project-bullets" style="margin-top: 16px;">
+        <ul class="project-bullets" style="margin-top: 12px;">
           <li>Designing an AIOps system that parses real-time server and application logs and classifies failure patterns using machine learning and NLP.</li>
-          <li>Building feature extraction and supervised classification models to detect and categorize error types, aiming to reduce mean-time-to-detection (MTTD) during outages.</li>
-          <li>Planning a rule-guarded remediation module with rollback, audit trails, and a real-time monitoring dashboard.</li>
+          <li>Building feature extraction and supervised classification models to detect and categorize error types, aiming to reduce mean-time-to-detection (MTTD).</li>
         </ul>
       </div>
 
-      <div style="margin-top: 40px;">
+      <div style="margin-top: 30px;">
         <a href="index.html" class="btn-outline">&larr; Back to Home</a>
       </div>
     </section>
   </div>
 
-  <!-- STATIC BOTTOM BAR -->
+  <!-- STICKY BOTTOM BAR -->
   <footer class="sticky-bottom-bar">
     <div class="sticky-info">
       <span><strong>Let’s Connect:</strong> <a href="mailto:ramyahegde18@gmail.com" class="sticky-mail-link">ramyahegde18@gmail.com</a></span>
@@ -80,10 +82,10 @@
       if (mode === 'mobile') {
         container.style.maxWidth = '400px';
         container.style.margin = '0 auto';
-        container.style.border = '10px solid #333';
-        container.style.borderRadius = '30px';
+        container.style.border = '12px solid #191919';
+        container.style.borderRadius = '32px';
         container.style.padding = '20px';
-        container.style.background = '#fff';
+        container.style.background = '#ffffff';
       } else {
         container.style.maxWidth = '1100px';
         container.style.margin = '0 auto';
