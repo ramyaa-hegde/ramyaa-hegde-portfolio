@@ -11,6 +11,10 @@
   <!-- Top Sticky Navigation Bar -->
   <header class="navbar">
     <a href="index.html" class="nav-brand">Ramya Hegde</a>
+    <div class="view-mode-switcher">
+      <button onclick="setViewMode('desktop')" title="Laptop View" class="view-icon-btn">💻</button>
+      <button onclick="setViewMode('mobile')" title="Mobile View" class="view-icon-btn">📱</button>
+    </div>
     <nav class="nav-links">
       <a href="index.html#home">Home</a>
       <a href="index.html#experience">Experience</a>
@@ -22,11 +26,10 @@
     </nav>
   </header>
 
-  <div class="container">
+  <div class="container" id="projects-container">
     <section class="section" style="border: none;">
       <h2>Projects</h2>
       
-      <!-- Project 1 -->
       <div class="project-detail-box">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
           <h3>Search Intelligence Engine &amp; Content Opportunity Scoring</h3>
@@ -41,7 +44,6 @@
         </ul>
       </div>
 
-      <!-- Project 2 -->
       <div class="project-detail-box" style="margin-top: 30px;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
           <h3>Autonomous AI-Driven DevOps Log Analyzer &amp; Self-Healing System</h3>
@@ -64,14 +66,32 @@
   <!-- STATIC BOTTOM BAR -->
   <footer class="sticky-bottom-bar">
     <div class="sticky-info">
-      <span><strong>Ramya Hegde</strong> &bull; Bengaluru, India</span>
+      <span><strong>Let's Connect:</strong> <a href="mailto:ramyahegde18@gmail.com" style="color: var(--accent-color); text-decoration: none; font-weight: 600;">ramyahegde18@gmail.com</a></span>
     </div>
     <div class="sticky-actions">
-      <a href="mailto:ramyahegde18@gmail.com" class="sticky-link">Email</a>
       <a href="https://github.com/ramyaa-hegde" target="_blank" rel="noopener" class="sticky-link">GitHub</a>
       <a href="Ramya_Hegde_Resume.pdf" target="_blank" rel="noopener" class="btn-primary" style="padding: 6px 14px; font-size: 0.85rem;">Download CV</a>
     </div>
   </footer>
 
+  <script>
+    function setViewMode(mode) {
+      const container = document.getElementById('projects-container');
+      if (mode === 'mobile') {
+        container.style.maxWidth = '400px';
+        container.style.margin = '0 auto';
+        container.style.border = '10px solid #333';
+        container.style.borderRadius = '30px';
+        container.style.padding = '20px';
+        container.style.background = '#fff';
+      } else {
+        container.style.maxWidth = '1100px';
+        container.style.margin = '0 auto';
+        container.style.border = 'none';
+        container.style.borderRadius = '0';
+        container.style.padding = '40px 20px';
+      }
+    }
+  </script>
 </body>
 </html>
