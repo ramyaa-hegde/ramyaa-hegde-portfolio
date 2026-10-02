@@ -44,6 +44,7 @@ body {
   padding: 4px 8px;
   border-radius: 20px;
   border: 1px solid var(--border-color);
+  align-items: center;
 }
 
 .view-icon-btn {
@@ -54,6 +55,8 @@ body {
   padding: 2px 6px;
   border-radius: 4px;
   transition: background 0.2s;
+  display: flex;
+  align-items: center;
 }
 
 .view-icon-btn:hover {
@@ -88,11 +91,13 @@ body {
 .btn-primary {
   background-color: var(--accent-color);
   color: #fff !important;
-  padding: 8px 18px;
+  padding: 10px 22px;
   border-radius: 6px;
   font-weight: 600;
   text-decoration: none;
   transition: opacity 0.2s;
+  display: inline-block;
+  text-align: center;
 }
 
 .btn-primary:hover {
@@ -122,7 +127,7 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Hero Section */
+/* Hero Section Typography Updates */
 .hero-section {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -132,17 +137,33 @@ body {
   border-bottom: 1px solid var(--border-color);
 }
 
-.hero-text h1 {
-  font-size: 3rem;
-  line-height: 1.15;
-  margin: 0 0 20px 0;
-  font-weight: 800;
+.hero-welcome {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0 0 4px 0;
 }
 
-.hero-text p {
-  font-size: 1.1rem;
+.hero-name {
+  font-size: 3.4rem;
+  line-height: 1.1;
+  margin: 0 0 12px 0;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin: 0 0 16px 0;
+}
+
+.hero-desc {
+  font-size: 1.05rem;
   color: var(--text-muted);
-  margin-bottom: 30px;
+  margin-bottom: 28px;
+  line-height: 1.6;
 }
 
 .hero-card {
@@ -287,6 +308,16 @@ body {
   font-size: 0.95rem;
 }
 
+.sticky-mail-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sticky-mail-link:hover {
+  text-decoration: underline;
+}
+
 .sticky-actions {
   display: flex;
   gap: 16px;
@@ -332,8 +363,8 @@ body {
     gap: 30px;
     padding-top: 10px;
   }
-  .hero-text h1 {
-    font-size: 2.3rem;
+  .hero-name {
+    font-size: 2.5rem;
   }
   .timeline-item {
     flex-direction: column;
