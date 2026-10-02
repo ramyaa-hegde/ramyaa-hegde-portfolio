@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ramya Hegde | Senior Operations Analyst & AI/ML Engineer</title>
+  <title>Ramya Hegde | Senior Operations Analyst & Aspiring AI/ML Engineer</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body id="site-body">
@@ -12,16 +12,16 @@
   <header class="navbar">
     <a href="#home" class="nav-brand">Ramya Hegde</a>
     
-    <!-- Laptop / Mobile View Switcher Icons -->
+    <!-- Desktop, Mobile & Home Icon Switchers -->
     <div class="view-mode-switcher">
-      <button onclick="setViewMode('desktop')" title="Laptop View" class="view-icon-btn">💻</button>
+      <button onclick="setViewMode('desktop')" title="Desktop View" class="view-icon-btn">💻</button>
       <button onclick="setViewMode('mobile')" title="Mobile View" class="view-icon-btn">📱</button>
+      <a href="#home" title="Home" class="view-icon-btn" style="text-decoration: none;">🏠</a>
     </div>
 
     <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
     
     <nav class="nav-links">
-      <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
@@ -37,15 +37,17 @@
     <!-- HOME / INTRO SECTION -->
     <section id="home" class="hero-section">
       <div class="hero-text">
-        <h1>Ramya Hegde<br>Senior Operations Analyst &amp; AI/ML Engineer</h1>
-        <p>Bridging the gap between high-volume operations and intelligent machine learning systems. Turning operational complexity into streamlined data pipelines.</p>
+        <p class="hero-welcome">Welcome to my portfolio</p>
+        <h1 class="hero-name">Ramya Hegde</h1>
+        <p class="hero-subtitle">Senior Operations Analyst | Aspiring AI/ML Engineer</p>
+        <p class="hero-desc">Bridging the gap between high-volume operations and intelligent machine learning systems, turning operational complexity into streamlined data pipelines.</p>
         <div class="hero-buttons">
           <a href="Ramya_Hegde_Resume.pdf" target="_blank" rel="noopener" class="btn-primary">Download Resume</a>
-          <a href="mailto:ramyahegde18@gmail.com" class="btn-outline">Get in Touch</a>
+          <a href="mailto:ramyahegde18@gmail.com" class="btn-primary">Get in Touch</a>
         </div>
       </div>
       
-      <!-- Intro Card replacing photo -->
+      <!-- Intro Card -->
       <div class="hero-card" id="about">
         <h3 style="margin-top:0; font-size: 1.4rem;">Hello &amp; Welcome</h3>
         <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6;">
@@ -149,14 +151,13 @@
 
   </div>
 
-  <!-- STATIC BOTTOM BAR (Let's Connect / Email / CV / GitHub) -->
+  <!-- STATIC BOTTOM BAR (Let's Connect & GitHub) -->
   <footer class="sticky-bottom-bar">
     <div class="sticky-info">
-      <span><strong>Let's Connect:</strong> <a href="mailto:ramyahegde18@gmail.com" style="color: var(--accent-color); text-decoration: none; font-weight: 600;">ramyahegde18@gmail.com</a></span>
+      <span><strong>Let’s Connect:</strong> <a href="mailto:ramyahegde18@gmail.com" class="sticky-mail-link">ramyahegde18@gmail.com</a></span>
     </div>
     <div class="sticky-actions">
       <a href="https://github.com/ramyaa-hegde" target="_blank" rel="noopener" class="sticky-link">GitHub</a>
-      <a href="Ramya_Hegde_Resume.pdf" target="_blank" rel="noopener" class="btn-primary" style="padding: 6px 14px; font-size: 0.85rem;">Download CV</a>
     </div>
   </footer>
 
@@ -165,7 +166,6 @@
     const nav = document.querySelector('.nav-links');
     btn.addEventListener('click', () => { nav.classList.toggle('active'); });
 
-    // Interactive View Mode Switcher script
     function setViewMode(mode) {
       const container = document.querySelector('.container');
       if (mode === 'mobile') {
