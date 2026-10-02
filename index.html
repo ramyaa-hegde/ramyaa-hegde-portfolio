@@ -10,9 +10,12 @@
 
   <!-- Top Sticky Navigation Bar -->
   <header class="navbar">
-    <a href="#home" class="nav-brand">Ramya Hegde</a>
+    <div class="nav-brand-group">
+      <span style="font-weight: 700; font-size: 1.1rem;">Ramya Hegde</span>
+      <span class="nav-title-tag">[ Senior Operations Analyst ]</span>
+    </div>
     
-    <!-- Desktop, Mobile & Home Icon Switchers -->
+    <!-- View Mode Switchers -->
     <div class="view-mode-switcher">
       <button onclick="setViewMode('desktop')" title="Desktop View" class="view-icon-btn">💻</button>
       <button onclick="setViewMode('mobile')" title="Mobile View" class="view-icon-btn">📱</button>
@@ -22,39 +25,44 @@
     <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
     
     <nav class="nav-links">
-      <a href="#about">About</a>
+      <a href="#about">About Me</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
       <a href="#certifications">Certifications</a>
       <a href="projects.html">Projects</a>
       <a href="https://github.com/ramyaa-hegde" target="_blank" rel="noopener">GitHub</a>
-      <a href="Ramya_Hegde_Resume.pdf" target="_blank" rel="noopener" class="btn-primary">Download Resume</a>
+      <a href="Ramya_Hegde_Resume.pdf" target="_blank" rel="noopener" class="btn-primary">Resume</a>
     </nav>
   </header>
 
-  <div class="container">
+  <div class="container" id="main-container">
     
-    <!-- HOME / INTRO SECTION -->
+    <!-- HERO SECTION -->
     <section id="home" class="hero-section">
-      <div class="hero-text">
+      <div class="hero-left-card">
+        <h1 class="hero-hello">Hello</h1>
+        <div class="hero-profile-box">
+          <div class="hero-avatar-placeholder">RH</div>
+          <div>
+            <h2 style="margin:0; font-size: 1.1rem;">Ramya Hegde</h2>
+            <p style="margin:0; color:var(--text-muted); font-size: 0.85rem;">Senior Operations Analyst</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-right-content">
         <p class="hero-welcome">Welcome to my portfolio</p>
         <h1 class="hero-name">Ramya Hegde</h1>
         <p class="hero-subtitle">Senior Operations Analyst | Aspiring AI/ML Engineer</p>
-        <p class="hero-desc">Bridging the gap between high-volume operations and intelligent machine learning systems, turning operational complexity into streamlined data pipelines.</p>
+        
+        <p class="hero-desc" id="about">
+          Bridging the gap between high-volume operations and intelligent machine learning systems, turning operational complexity into streamlined data pipelines and robust system building.
+        </p>
+
         <div class="hero-buttons">
           <a href="Ramya_Hegde_Resume.pdf" target="_blank" rel="noopener" class="btn-primary">Download Resume</a>
           <a href="mailto:ramyahegde18@gmail.com" class="btn-primary">Get in Touch</a>
         </div>
-      </div>
-      
-      <!-- Intro Card -->
-      <div class="hero-card" id="about">
-        <h3 style="margin-top:0; font-size: 1.4rem;">Hello &amp; Welcome</h3>
-        <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6;">
-          I spent 5+ years solving real business challenges as an Operations Analyst across companies like First Advantage, Dunzo, and Reliance Jio. 
-          <br><br>
-          Currently expanding into AI/ML engineering through formal data science studies at Jain University and hands-on search intelligence system building.
-        </p>
       </div>
     </section>
 
@@ -62,36 +70,36 @@
     <section id="experience" class="section">
       <h2>Experience</h2>
       
-      <div class="timeline-item">
-        <div>
+      <div class="card-item">
+        <div class="card-header-row">
           <h3>Senior Operations Analyst</h3>
-          <p>First Advantage</p>
+          <span class="card-date">Jun 2023 - Present</span>
         </div>
-        <time>Jun 2023 - Present</time>
+        <p class="card-subtitle">First Advantage</p>
       </div>
 
-      <div class="timeline-item">
-        <div>
+      <div class="card-item">
+        <div class="card-header-row">
           <h3>AI/ML Engineering Intern</h3>
-          <p>FlyRank AI</p>
+          <span class="card-date">Jul 2026 - Sep 2026</span>
         </div>
-        <time>Jul 2026 - Sep 2026</time>
+        <p class="card-subtitle">FlyRank AI</p>
       </div>
 
-      <div class="timeline-item">
-        <div>
+      <div class="card-item">
+        <div class="card-header-row">
           <h3>Business Operations Analyst</h3>
-          <p>Dunzo</p>
+          <span class="card-date">Mar 2022 - May 2023</span>
         </div>
-        <time>Mar 2022 - May 2023</time>
+        <p class="card-subtitle">Dunzo</p>
       </div>
 
-      <div class="timeline-item">
-        <div>
+      <div class="card-item">
+        <div class="card-header-row">
           <h3>Operational Specialist</h3>
-          <p>Reliance Jio</p>
+          <span class="card-date">Jan 2021 - Mar 2022</span>
         </div>
-        <time>Jan 2021 - Mar 2022</time>
+        <p class="card-subtitle">Reliance Jio</p>
       </div>
     </section>
 
@@ -99,20 +107,20 @@
     <section id="education" class="section">
       <h2>Education</h2>
       
-      <div class="timeline-item">
-        <div>
+      <div class="card-item">
+        <div class="card-header-row">
           <h3>B.Sc. in Data Science and Analytics</h3>
-          <p>Jain University</p>
+          <span class="card-date">2025 - 2028</span>
         </div>
-        <time>2025 - 2028</time>
+        <p class="card-subtitle">Jain University</p>
       </div>
 
-      <div class="timeline-item">
-        <div>
+      <div class="card-item">
+        <div class="card-header-row">
           <h3>Diploma in Civil Engineering</h3>
-          <p>Government Women's Polytechnic</p>
+          <span class="card-date">2017 - 2020</span>
         </div>
-        <time>2017 - 2020</time>
+        <p class="card-subtitle">Government Women's Polytechnic</p>
       </div>
     </section>
 
@@ -120,38 +128,38 @@
     <section id="certifications" class="section">
       <h2>Certifications</h2>
       
-      <div class="timeline-item">
-        <div>
+      <div class="card-item">
+        <div class="card-header-row">
           <h3>Machine Learning Internship Program</h3>
-          <p>FlyRank AI &bull; <a href="https://internship.flyrank.ai/verify" target="_blank" rel="noopener" style="color:var(--accent-color); text-decoration:none;">Verify ID: FR-D11-B55A0-891DD</a></p>
+          <span class="card-date">Oct 2026</span>
         </div>
-        <time>Oct 2026</time>
+        <p class="card-subtitle">FlyRank AI &bull; <a href="https://internship.flyrank.ai/verify" target="_blank" rel="noopener" style="color:var(--accent-color); text-decoration:none;">Verify ID: FR-D11-B55A0-891DD</a></p>
       </div>
 
-      <div class="timeline-item">
-        <div>
+      <div class="card-item">
+        <div class="card-header-row">
           <h3>AI Fluency Internship Program</h3>
-          <p>FlyRank AI &bull; <a href="https://internship.flyrank.ai/verify" target="_blank" rel="noopener" style="color:var(--accent-color); text-decoration:none;">Verify ID: FR-D11-EC35C-51C18</a></p>
+          <span class="card-date">Oct 2026</span>
         </div>
-        <time>Oct 2026</time>
+        <p class="card-subtitle">FlyRank AI &bull; <a href="https://internship.flyrank.ai/verify" target="_blank" rel="noopener" style="color:var(--accent-color); text-decoration:none;">Verify ID: FR-D11-EC35C-51C18</a></p>
       </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
+    <!-- PROJECTS PREVIEW -->
     <section id="projects" class="section">
       <h2>Projects</h2>
       <a href="projects.html" class="project-preview-card">
         <div>
-          <h3>View Systems &amp; Technical Projects &rarr;</h3>
-          <p>Explore detailed breakdowns of Search Intelligence Scoring and AIOps DevOps Log Analyzers.</p>
+          <h3>Explore Technical Projects &amp; Systems &rarr;</h3>
+          <p>Search Intelligence Scoring, Machine Learning Pipelines, and AIOps Systems.</p>
         </div>
-        <span class="btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">Open Projects</span>
+        <span class="btn-outline">View Projects</span>
       </a>
     </section>
 
   </div>
 
-  <!-- STATIC BOTTOM BAR (Let's Connect & GitHub) -->
+  <!-- STICKY BOTTOM BAR -->
   <footer class="sticky-bottom-bar">
     <div class="sticky-info">
       <span><strong>Let’s Connect:</strong> <a href="mailto:ramyahegde18@gmail.com" class="sticky-mail-link">ramyahegde18@gmail.com</a></span>
@@ -167,14 +175,14 @@
     btn.addEventListener('click', () => { nav.classList.toggle('active'); });
 
     function setViewMode(mode) {
-      const container = document.querySelector('.container');
+      const container = document.getElementById('main-container');
       if (mode === 'mobile') {
         container.style.maxWidth = '400px';
         container.style.margin = '0 auto';
-        container.style.border = '10px solid #333';
-        container.style.borderRadius = '30px';
+        container.style.border = '12px solid #191919';
+        container.style.borderRadius = '32px';
         container.style.padding = '20px';
-        container.style.background = '#fff';
+        container.style.background = '#ffffff';
       } else {
         container.style.maxWidth = '1100px';
         container.style.margin = '0 auto';
