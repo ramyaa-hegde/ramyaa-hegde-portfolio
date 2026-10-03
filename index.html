@@ -1,79 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ramya Hegde | Senior Operations Analyst & Aspiring AI/ML Engineer</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body class="fixed-screen-body">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Ramya Hegde | Aspiring AI/ML Engineer</title>
+<meta name="description" content="Ramya Hegde: operations analyst moving into AI/ML. Leakage-aware machine learning, Python, SQL, human-in-the-loop systems.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231D4ED8'/><text x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'>R</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#F3F6FB; --card:#FFFFFF; --ink:#0F172A; --muted:#475569; --line:#D5DDE9;
+  --blue:#1D4ED8; --blue-soft:#E3ECFD; --ops:#DCE3EE;
+  --head:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;
+  --text:"Source Sans 3","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:400 15px/1.5 var(--text);min-height:100vh}
+a{color:var(--blue)}
+a:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:4px}
+h1,h2,h3{font-family:var(--head);margin:0;line-height:1.15}
+.page{max-width:1280px;min-height:100vh;margin:0 auto;padding:20px 28px;display:flex;flex-direction:column;gap:16px}
 
-  <!-- Top Dark Header Bar (Clearly Distinct) -->
-  <header class="navbar-dark">
-    <div class="nav-brand-group">
-      <span class="nav-brand-name">Ramya Hegde</span>
-      <span class="nav-title-tag">[ Senior Operations Analyst ]</span>
-    </div>
-    
-    <nav class="nav-links-top">
-      <a href="index.html" class="active-link">About Me</a>
-      <a href="experience.html">Experience &amp; Education</a>
-      <a href="projects.html">Projects &amp; Certifications</a>
-      <a href="mailto:ramyahegde18@gmail.com">Contact</a>
+/* top */
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.name{font:700 1.15rem var(--head)}
+.name span{display:block;font:400 .9rem var(--text);color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.links a{padding:7px 14px;border:1.5px solid var(--blue);border-radius:8px;font-weight:600;font-size:.92rem;text-decoration:none;background:var(--card)}
+.links a.p{background:var(--blue);color:#fff}
+.links a:hover{background:var(--blue-soft)}
+.links a.p:hover{background:var(--blue);filter:brightness(1.1)}
+.hero h1{font-size:clamp(1.6rem,3.2vw,2.5rem);letter-spacing:-.015em;max-width:30ch}
+.hero p{color:var(--muted);max-width:92ch;margin:8px 0 0;font-size:1.02rem}
+
+/* timeline */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.panel>h2{font-size:1.05rem;margin-bottom:2px}
+.panel>.sub{color:var(--muted);font-size:.9rem;margin:0 0 12px}
+.tl{display:grid;grid-template-columns:92px 1fr;row-gap:6px;align-items:start;position:relative}
+.lbl{font:700 .86rem var(--head);padding-top:6px}
+.lbl small{display:block;font:400 .78rem var(--text);color:var(--muted)}
+.axis,.track{position:relative}
+.axis{height:20px;border-bottom:1px solid var(--line)}
+.axis i{position:absolute;top:0;font-style:normal;font-size:.8rem;color:var(--muted);padding-left:4px;border-left:1px solid var(--line);height:20px}
+.row{position:relative;height:42px;margin-bottom:6px}
+.bar{position:absolute;top:0;bottom:0;left:var(--l);width:var(--w);padding:4px 8px;font-size:.8rem;line-height:1.25;background:var(--ops);border-left:2px solid #fff;border-radius:5px;overflow:hidden}
+.bar b{display:block;font-size:.84rem}
+.bar.ml{background:var(--blue);color:#fff}
+.bar.ml.alt{background:#173BA6}
+.bar.tiny{overflow:visible;padding:0}
+.bar .out{position:absolute;right:calc(100% + 8px);top:50%;transform:translateY(-50%);color:var(--ink);white-space:nowrap;font-size:.84rem;text-align:right}
+.now{position:absolute;top:0;bottom:0;left:var(--l);border-left:2px dashed var(--blue);pointer-events:none}
+.now em{position:absolute;top:-19px;left:-26px;font-style:normal;font-weight:600;font-size:.76rem;background:var(--blue);color:#fff;border-radius:4px;padding:0 6px}
+
+/* bottom */
+.cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:16px;flex:1}
+.cols h2{font-size:1.05rem;margin-bottom:8px}
+.cols h3{font-size:.98rem;margin-bottom:2px}
+.cols p{margin:0 0 6px;color:var(--muted);font-size:.93rem}
+.proj+.proj{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.tag{display:inline-block;font-size:.76rem;font-weight:600;background:var(--blue-soft);color:var(--blue);border-radius:99px;padding:1px 9px;margin-left:6px;vertical-align:2px}
+.sk p{margin:0 0 8px}.sk b,.ed b{color:var(--ink)}
+.ed p{margin:0 0 8px}
+.ed small{display:block;color:var(--muted);font-size:.85rem}
+
+@media (max-width:1000px){
+  .cols{grid-template-columns:1fr}
+}
+@media (max-width:860px){
+  .page{padding:16px}
+  .tl{grid-template-columns:1fr}
+  .axis,.now{display:none}
+  .lbl{padding:8px 0 2px}
+  .row{height:auto;display:flex;flex-direction:column;gap:4px;margin:0 0 4px}
+  .bar{position:static;width:auto;padding:6px 10px;border-left:0}
+  .bar.tiny{padding:6px 10px;overflow:hidden}
+  .bar .out{position:static;transform:none;color:inherit;white-space:normal;text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="top">
+    <div class="name">Ramya Hegde<span>Aspiring AI/ML Engineer, Bengaluru, India</span></div>
+    <nav class="links" aria-label="Contact links">
+      <a class="p" href="mailto:ramyahegde18@gmail.com">Email me</a>
+      <a href="https://linkedin.com/in/ramyaahegde">LinkedIn</a>
+      <a href="https://github.com/ramyaa-hegde/ramyaa-hegde">GitHub</a>
+      <a href="Ramya_Hegde_Resume.pdf">Resume (PDF)</a>
     </nav>
   </header>
 
-  <!-- Main Screen Container (No Scrolling) -->
-  <main class="single-viewport-container">
-    <div class="hero-card-layout">
-      
-      <!-- Left Purple Box with "Hello" and Profile Box -->
-      <div class="hero-left-box">
-        <h1 class="hero-hello-text">Hello</h1>
-        
-        <div class="profile-card-mini">
-          <div class="avatar-circle">RH</div>
-          <div>
-            <h3 class="profile-mini-name">Ramya Hegde</h3>
-            <p class="profile-mini-title">Senior Operations Analyst</p>
+  <section class="hero">
+    <h1>Five years of checking data by hand. Now I build the models that tell reviewers where to look.</h1>
+    <p>I work in operations and data quality, and I'm moving into AI/ML. Below is how the two tracks of my career have run side by side, and what I've built so far.</p>
+  </section>
+
+  <section class="panel" aria-labelledby="tl-h">
+    <h2 id="tl-h">My career switch: two tracks, 2021 to now</h2>
+    <p class="sub">The operations track is where I learned data quality. The data and ML track is where I'm taking it next.</p>
+    <div class="tl">
+      <div></div>
+      <div class="axis" aria-hidden="true">
+        <i style="left:0%">2021</i><i style="left:16.67%">2022</i><i style="left:33.33%">2023</i>
+        <i style="left:50%">2024</i><i style="left:66.67%">2025</i><i style="left:83.33%">2026</i>
+      </div>
+
+      <div class="lbl">Operations<small>full-time, since 2021</small></div>
+      <div class="track">
+        <div class="row">
+          <div class="bar" style="--l:0%;--w:19.44%"><b>Reliance Jio</b>Operational Specialist</div>
+          <div class="bar" style="--l:19.44%;--w:20.83%"><b>Dunzo</b>Business Operations Analyst</div>
+          <div class="bar" style="--l:40.28%;--w:30.56%"><b>First Advantage</b>Operations Analyst, Jun 2023 – Apr 2025</div>
+          <div class="bar" style="--l:70.83%;--w:25%"><b>First Advantage</b>Senior Operations Analyst, Apr 2025 – now</div>
+        </div>
+      </div>
+
+      <div class="lbl">Data and ML<small>learning and building</small></div>
+      <div class="track">
+        <div class="row">
+          <div class="bar ml" style="--l:66.67%;--w:33.33%"><b>B.Sc. Data Science and Analytics</b>Jain University, 2025 – 2028</div>
+        </div>
+        <div class="row">
+          <div class="bar ml alt tiny" style="--l:91.67%;--w:4.17%" title="AI/ML Engineering Intern, FlyRank AI, Jul to Sep 2026">
+            <span class="out"><b style="display:inline">AI/ML Engineering Intern</b>, FlyRank AI, Jul – Sep 2026, plus 2 certificates</span>
           </div>
         </div>
+        <div class="now" style="--l:95.83%"><em>Oct 2026</em></div>
       </div>
-      
-      <!-- Right Content Box matching sample typography -->
-      <div class="hero-right-box">
-        <p class="intro-paragraph">
-          Bridging the gap between high-volume operations and intelligent machine learning systems, turning operational complexity into streamlined data pipelines and robust system building.
-        </p>
+    </div>
+  </section>
 
-        <p class="intro-paragraph secondary-desc">
-          This is a great place to introduce yourself, share what you do and what makes your work truly unique.
-        </p>
-
-        <div class="hero-action-buttons">
-          <a href="Ramya_Hegde_Resume.pdf" target="_blank" rel="noopener" class="btn-pill-dark">Resume</a>
-          <a href="projects.html" class="btn-pill-light">Projects</a>
-        </div>
+  <div class="cols">
+    <section class="panel" aria-labelledby="pr-h">
+      <h2 id="pr-h">Projects</h2>
+      <div class="proj">
+        <h3>Search Intelligence Engine &amp; Content Opportunity Scoring<span class="tag">Completed</span></h3>
+        <p>Ranks content likely to fall below its CTR benchmark so reviewers start in the right place. The Random Forest reached Precision@20 of 0.900 against 0.250 for a simple February-only baseline. It was tested on 12 held-out clients, from 73,481 observations across 33 clients, with a leakage audit.</p>
+        <p><a href="https://github.com/ramyaa-hegde/flyrank-ml-internship-tasks">View the GitHub repository</a></p>
       </div>
+      <div class="proj">
+        <h3>DevOps Log Analyzer &amp; Self-Healing System<span class="tag">In progress</span></h3>
+        <p>Classifies failure patterns in server and application logs with machine learning and NLP, aiming to cut time to detect outages. A rule-guarded fix module with rollback and audit trails is planned.</p>
+      </div>
+    </section>
 
-    </div>
-  </main>
+    <section class="panel sk" aria-labelledby="sk-h">
+      <h2 id="sk-h">Skills</h2>
+      <p><b>Programming and data:</b> Python, SQL, pandas, NumPy, DuckDB, Excel, data cleaning, exploratory analysis</p>
+      <p><b>Machine learning:</b> feature engineering, classification, Random Forest, model evaluation, Precision@K</p>
+      <p><b>ML practice:</b> grouped validation, baseline design, leakage detection</p>
+      <p><b>Libraries and applied work:</b> scikit-learn, matplotlib, search intelligence, human-in-the-loop systems</p>
+      <p><b>Operations strengths:</b> data-quality and compliance checks, root-cause analysis, stakeholder communication</p>
+    </section>
 
-  <!-- Distinct Dark Footer Bar -->
-  <footer class="footer-dark">
-    <div class="footer-left">
-      <span>ramyahegde18@gmail.com</span>
-      <span>&bull;</span>
-      <span>Accessibility Statement</span>
-    </div>
-    <div class="footer-center">
-      <a href="https://github.com/ramyaa-hegde" target="_blank" rel="noopener">GitHub</a>
-      <a href="mailto:ramyahegde18@gmail.com">Email</a>
-    </div>
-    <div class="footer-right">
-      &copy; 2026 Ramya Hegde. Powered &amp; secured.
-    </div>
-  </footer>
+    <section class="panel ed" aria-labelledby="ed-h">
+      <h2 id="ed-h">Education and certificates</h2>
+      <p><b>B.Sc. Data Science and Analytics</b><small>Jain University, Bengaluru, 2025 – 2028</small></p>
+      <p><b>Diploma in Civil Engineering</b><small>Government Women's Polytechnic, Hubli, 2020</small></p>
+      <p><b>Machine Learning Internship Program</b><small>FlyRank AI, Oct 2026, ID FR-D11-B55A0-891DD</small></p>
+      <p><b>AI Fluency Internship Program</b><small>FlyRank AI, Oct 2026, ID FR-D11-EC35C-51C18</small></p>
+    </section>
+  </div>
 
+</div>
 </body>
 </html>
