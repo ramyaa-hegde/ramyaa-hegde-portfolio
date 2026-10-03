@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Ramya Hegde | Aspiring AI/ML Engineer</title>
+<meta name="description" content="Ramya Hegde: operations data analyst with 5+ years of experience, moving into machine learning. AI/ML internship, certifications and public ML projects.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230B4F4A'/><text x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'>R</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#F2F7F6; --card:#FFFFFF; --ink:#10201E; --muted:#47605C; --line:#D3E0DD; --bar:#0B4F4A;
+  --accent:#0F766E; --accent-soft:#DDF3EF; --desk:#D6E0DE;
+  --head:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;
+  --text:"Source Sans 3","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{display:flex;flex-direction:column;background:var(--desk);color:var(--ink);font:400 16px/1.55 var(--text)}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+h1,h2,h3{font-family:var(--head);margin:0;line-height:1.15}
+button{font:inherit;cursor:pointer}
+
+/* preview switcher */
+.viewbar{flex:none;height:40px;display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:0 14px;font-size:.88rem;color:var(--muted)}
+.viewbar button{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1.5px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
+.viewbar button[aria-pressed=true]{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600}
+.viewbar svg{width:18px;height:18px}
+.stage{flex:1;min-height:0;display:flex;justify-content:center;align-items:stretch}
+.shell[data-view=mobile] .stage{align-items:center;padding:0 0 14px}
+.shell[data-view=mobile] .app{width:390px;height:min(820px,calc(100vh - 54px));border:10px solid var(--ink);border-radius:34px;box-shadow:0 18px 50px rgba(27,26,25,.28)}
+.shell{display:flex;flex-direction:column;flex:1;min-height:0}
+
+/* app */
+.app{width:100%;container:app/inline-size;display:grid;grid-template-rows:auto 1fr auto;background:var(--bg);overflow:hidden}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px;padding:0 22px;background:var(--bar);color:#fff}
+.brand{font:700 1.15rem var(--head);white-space:nowrap;color:#fff}
+.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button,.tabs a{white-space:nowrap;padding:8px 13px;border:0;border-bottom:3px solid transparent;background:none;color:#D5EBE7;font-weight:600;font-size:.97rem;text-decoration:none;border-radius:8px 8px 0 0}
+.tabs button:hover,.tabs a:hover{color:#fff}
+.tabs button[aria-selected=true]{color:#fff;border-bottom-color:#5EEAD4}
+.top :focus-visible,.bottom :focus-visible{outline-color:#5EEAD4}
+.tabs{align-self:stretch}
+.tabs button,.tabs a{display:flex;align-items:center}
+
+main{position:relative;min-height:0}
+.scroller{height:100%;overflow-y:auto}
+.page{padding:34px 84px 40px;max-width:1180px;margin:0 auto}
+.page[hidden]{display:none}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);color:var(--accent);display:grid;place-items:center;box-shadow:0 4px 14px rgba(27,26,25,.1)}
+.arrow:hover:not(:disabled){background:var(--accent);color:#fff;border-color:var(--accent)}
+.arrow:disabled{opacity:.3;cursor:default}
+.arrow svg{width:22px;height:22px}
+#prev{left:14px}#next{right:14px}
+
+.bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap;gap:12px;height:56px;padding:0 22px;background:var(--bar);color:#E3F4F1;font-size:.95rem;white-space:nowrap}
+.bottom a{color:#7EE8D8;font-weight:600}
+
+/* home */
+.hello{color:var(--muted);font-size:1.2rem;font-weight:600}
+.role{font:700 clamp(2.4rem,8cqw,4.4rem)/1.05 var(--head);color:var(--bar);letter-spacing:-.02em;margin:4px 0 8px}
+.who{font:700 clamp(1.05rem,3.2cqw,1.55rem)/1.3 var(--head);color:var(--accent);margin:0 0 18px}
+.intro{max-width:62ch;color:var(--muted);font-size:1.08rem;margin:0 0 22px}
+.icons{display:flex;gap:12px;margin-bottom:22px}
+.icons a{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);display:grid;place-items:center;color:var(--ink);text-decoration:none;font:700 .95rem var(--head)}
+.icons a:hover{border-color:var(--accent);color:var(--accent)}
+.icons svg{width:20px;height:20px}
+.lead{font:700 clamp(1.15rem,3.4cqw,1.5rem)/1.35 var(--head);color:var(--ink);max-width:40ch;margin:0 0 10px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.btn{display:inline-block;padding:13px 26px;border-radius:9px;border:2px solid var(--accent);font-weight:600;text-decoration:none;color:var(--accent);background:transparent}
+.btn.fill{background:var(--accent);color:#fff}
+.btn:hover{filter:brightness(.92)}
+.closing{max-width:860px;margin:0 auto;background:var(--bar);color:#fff;border-radius:16px;padding:40px 36px;text-align:center}
+.closing h2{font-size:clamp(1.6rem,4.6cqw,2.2rem);color:#fff;margin-bottom:14px}
+.closing p{margin:0 auto;max-width:60ch;color:#D5EBE7;font-size:1.05rem}
+.closing .endbtns{justify-content:center;margin-top:24px}
+.closing :focus-visible{outline-color:#5EEAD4}
+.thanks{margin-top:30px;padding-top:24px;border-top:1px solid rgba(255,255,255,.25)}
+.thanks h3{font-size:1.25rem;color:#7EE8D8;margin-bottom:4px}
+.thanks p{font-size:1rem}
+.reach{max-width:860px;margin:18px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.reach .card{display:block;text-decoration:none;color:var(--muted);font-size:.92rem;padding:14px 16px;overflow-wrap:anywhere}
+.reach .card b{display:block;color:var(--ink);font-family:var(--head);margin-bottom:2px}
+.reach .card:hover{border-color:var(--accent)}
+.endbtns{display:flex;flex-wrap:wrap;gap:10px}
+.btn.light{background:#fff;color:var(--bar);border-color:#fff}
+.btn.ghost{color:#fff;border-color:#fff}
+.steps-h{font-size:1.1rem;margin:28px 0 12px}
+.moves{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:980px;margin:0;padding:0;list-style:none}
+.moves li{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:12px;padding:14px 16px;font-size:.94rem;line-height:1.45;color:var(--muted)}
+.moves b{display:block;color:var(--ink);font-family:var(--head);font-size:1.02rem;margin-bottom:2px}
+.moves small{display:block;color:var(--accent);font-weight:700;font-size:.8rem;letter-spacing:.02em;margin-bottom:4px}
+
+/* shared */
+.title{font-size:clamp(1.7rem,4.6cqw,2.3rem);margin-bottom:4px}
+.sub{color:var(--muted);margin:0 0 22px;max-width:70ch}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.card.main{border-top:4px solid var(--accent)}
+.card h3{font-size:1.18rem}
+.meta{color:var(--muted);font-size:.93rem;margin:2px 0 10px}
+.meta strong{color:var(--ink)}
+.card ul{margin:8px 0 0;padding-left:19px}
+.card li{margin-bottom:5px;font-size:.97rem}
+.tag{display:inline-block;font-size:.78rem;font-weight:600;background:var(--accent-soft);color:var(--accent);border-radius:99px;padding:1px 10px;vertical-align:3px;margin-left:6px}
+.stack{margin:12px 0 0;color:var(--muted);font-size:.92rem}
+.three{grid-template-columns:repeat(3,1fr)}
+.card h2{font-size:1.1rem;margin-bottom:10px;color:var(--accent)}
+.item{margin-bottom:12px}.item b{display:block}.item small{color:var(--muted);font-size:.9rem}
+.skill{margin:0 0 9px;font-size:.96rem}
+.idrow{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:5px}
+.idrow code{font:600 .85rem ui-monospace,Consolas,monospace;background:var(--accent-soft);color:var(--bar);padding:3px 9px;border-radius:6px;user-select:all}
+.copy{border:1.5px solid var(--line);background:var(--card);color:var(--accent);border-radius:6px;padding:2px 10px;font-size:.82rem;font-weight:600}
+.copy:hover{border-color:var(--accent)}
+.verify{margin-top:6px;padding:14px;background:var(--accent-soft);border-radius:10px;font-size:.92rem;line-height:1.45}
+.verify.wide{margin-top:18px;max-width:640px}
+.verify .btn{padding:8px 16px;font-size:.9rem;margin:10px 0 6px}
+.verify small{display:block;color:var(--muted)}
+.moves a{display:inline-block;margin-top:6px;font-weight:600}
+
+@container app (max-width:900px){
+  .page{padding:26px 64px 34px}
+  .grid,.three,.reach{grid-template-columns:1fr}
+  .moves{grid-template-columns:1fr 1fr}
+}
+@container app (max-width:560px){
+  .brand{font-size:.95rem}
+  .top,.bottom{height:52px;padding:0 12px}
+  .tabs button,.tabs a{padding:8px 10px;font-size:.92rem}
+  .page{padding:20px 50px 28px}
+  .closing{padding:28px 20px}
+  .moves{grid-template-columns:1fr}
+  .card{padding:16px}
+  .arrow{width:38px;height:38px}
+  .arrow svg{width:18px;height:18px}
+  #prev{left:6px}#next{right:6px}
+  .bottom{font-size:.88rem}
+  .hide-n{display:none}
+}
+@media (max-width:700px){.viewbar{display:none}}
+@media (prefers-reduced-motion:no-preference){.arrow{transition:background .15s,color .15s}}
+</style>
+</head>
+<body>
+<div class="shell" id="shell" data-view="desktop">
+
+  <div class="viewbar" role="group" aria-label="Preview size">
+    <span>Preview as</span>
+    <button type="button" data-view="desktop" aria-pressed="true" title="Desktop view">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Desktop
+    </button>
+    <button type="button" data-view="mobile" aria-pressed="false" title="Mobile view">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>Mobile
+    </button>
+  </div>
+
+  <div class="stage">
+  <div class="app">
+
+    <header class="top">
+      <div class="brand">Ramya Hegde</div>
+      <nav class="tabs" aria-label="Pages">
+        <button type="button" data-go="0" aria-selected="true">Home</button>
+        <button type="button" data-go="1" aria-selected="false">Experience</button>
+        <button type="button" data-go="2" aria-selected="false">Projects</button>
+        <button type="button" data-go="3" aria-selected="false">Education</button>
+        <button type="button" data-go="4" aria-selected="false">Certifications</button>
+        <button type="button" data-go="5" aria-selected="false">Contact</button>
+        <a class="ext" href="https://github.com/ramyaa-hegde/ramyaa-hegde" target="_blank" rel="noopener">GitHub</a>
+        <a class="ext" href="https://linkedin.com/in/ramyaahegde" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="ext" href="Ramya_Hegde_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </nav>
+    </header>
+
+    <main>
+      <button class="arrow" id="prev" type="button" aria-label="Previous page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button class="arrow" id="next" type="button" aria-label="Next page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+
+      <div class="scroller" id="scroller">
+
+        <!-- 1 HOME -->
+        <section class="page" id="home" aria-label="Home">
+          <div class="hello">Hello, welcome to my portfolio</div>
+          <h1 class="role">Ramya Hegde</h1>
+          <div class="who">Senior Operations Analyst | Aspiring AI/ML Engineer</div>
+          <p class="lead">5+ years as an operations data analyst, now moving into machine learning.</p>
+          <p class="intro">I turn operational and case data into clear, prioritized decisions by checking data quality, finding root causes and tracking turnaround. To move into machine learning, I'm studying Data Science, completed an AI/ML internship, and built a model whose top 20 picks hit the target 90% of the time, against 25% for a simple baseline. I'm now building a system that reads server logs, and my goal is smart systems that spot problems and fix them on their own.</p>
+          <div class="icons">
+            <a href="https://linkedin.com/in/ramyaahegde" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+            <a href="https://github.com/ramyaa-hegde/ramyaa-hegde" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+            <a href="mailto:ramyahegde18@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+          </div>
+          <div class="cta">
+            <button class="btn fill" id="explore" type="button">Explore my portfolio</button>
+            <a class="btn" href="Ramya_Hegde_Resume.pdf" target="_blank" rel="noopener" download>Download resume</a>
+            <a class="btn" href="mailto:ramyahegde18@gmail.com">Contact me</a>
+          </div>
+          <h2 class="steps-h">What I'm doing to make the switch</h2>
+          <ul class="moves">
+            <li><small>Studying</small><b>B.Sc. Data Science and Analytics</b>Jain University, 2025 – 2028</li>
+            <li><small>Internship</small><b>AI/ML Engineering Intern</b>FlyRank AI, Jul – Sep 2026</li>
+            <li><small>Certified</small><b>Two certifications</b>Machine Learning and AI Fluency, Oct 2026<br><a href="#certifications" data-page="certifications">Verify online</a></li>
+            <li><small>Building</small><b>Two ML projects</b>One published on GitHub, one AIOps log analyzer in progress</li>
+          </ul>
+        </section>
+
+        <!-- 2 EXPERIENCE -->
+        <section class="page" id="experience" aria-label="Experience" hidden>
+          <h2 class="title">Experience</h2>
+          <p class="sub">What I have worked on, from customer operations to data analysis to machine learning.</p>
+          <div class="grid">
+            <article class="card main">
+              <h3>First Advantage Global Operating Centre</h3>
+              <div class="meta"><strong>Senior Operations Analyst</strong>, Apr 2025 – Present<br><strong>Operations Analyst</strong>, Jun 2023 – Apr 2025</div>
+              <ul>
+                <li>Analyze criminal background-verification case data, about 180–200 cases per day across 20+ clients, checking records against compliance criteria and surfacing discrepancies before decisions are made.</li>
+                <li>Extract the open-case report, clean and filter the data, and build pivot summaries and BI views of pending cases by client response status, giving the team a clear picture of what is waiting and why.</li>
+                <li>Rank pending cases by priority from that analysis and share the ranked list with teammates, so effort goes to the cases that matter most and the 90% within-24-hours turnaround target stays on track.</li>
+                <li>Monitor turnaround and exceptions against the target and flag gaps to clients and internal teams.</li>
+                <li>Investigate recurring discrepancies to find the root cause, and turn the findings into clear documentation requirements for clients to support process improvement.</li>
+                <li>Maintain structured trackers that serve as a reliable source of case data for quality reviews and follow-up decisions.</li>
+              </ul>
+            </article>
+            <article class="card main">
+              <h3>FlyRank AI</h3>
+              <div class="meta"><strong>AI/ML Engineering Intern</strong>, Jul 2026 – Sep 2026<br>AI/ML &amp; AI Fluency Internship Program</div>
+              <ul>
+                <li>Developed an end-to-end search-intelligence pipeline to prioritize content for manual CTR review.</li>
+                <li>Constructed a modelling dataset of 73,481 eligible client-content observations across 33 pseudonymized clients, and evaluated a Random Forest on a grouped holdout of 12 clients with zero client overlap.</li>
+                <li>Achieved Precision@20 of 0.900 versus 0.250 for a transparent February-only baseline on the held-out population, and completed validation and feature-leakage audits.</li>
+                <li>Completed training and practical work across both the Machine Learning and AI Fluency programs.</li>
+                <li>Translated model outputs into a human-review action framework and published reproducible notebooks, aggregate validation charts, public-safe summaries and a technical capstone paper.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Dunzo Digital Pvt Ltd</h3>
+              <div class="meta"><strong>Business Operations Analyst</strong>, Mar 2022 – May 2023</div>
+              <ul>
+                <li>Analyzed customers' refund history to identify refund and billing issues and recurring patterns.</li>
+                <li>Investigated billing, refund and account issues across customer, delivery-partner and merchant workflows using structured case review and root-cause analysis.</li>
+                <li>Coordinated with delivery-partner, merchant-support and internal teams to document outcomes, escalate exceptions and identify recurring process gaps.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Reliance Jio Infocomm</h3>
+              <div class="meta"><strong>Operational Specialist</strong>, Jan 2021 – Mar 2022</div>
+              <ul>
+                <li>Resolved network, billing, account and SIM-activation queries through structured troubleshooting, system checks and clear customer communication.</li>
+                <li>Maintained accurate interaction records, followed escalation procedures and identified recurring service issues requiring technical or back-office support.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- 3 PROJECTS -->
+        <section class="page" id="projects" aria-label="Projects" hidden>
+          <h2 class="title">Projects</h2>
+          <p class="sub">One finished and public, one in progress.</p>
+          <div class="grid">
+            <article class="card main">
+              <h3>Search Intelligence Engine &amp; Content Opportunity Scoring<span class="tag">Completed</span></h3>
+              <div class="meta">Public project on GitHub</div>
+              <ul>
+                <li>Tested whether February search and engagement signals could prioritize content likely to fall below the CTR benchmark in March better than a transparent February-only baseline.</li>
+                <li>Built a grouped-validation pipeline, ran a leakage audit, and converted model scores into a human-review framework with monitoring and retraining triggers.</li>
+                <li>The Random Forest achieved Precision@20 of 0.900 versus 0.250 for the baseline; published the research paper, notebooks, charts and public-safe summaries.</li>
+              </ul>
+              <p style="margin:14px 0 0"><a class="btn fill" href="https://github.com/ramyaa-hegde/flyrank-ml-internship-tasks" target="_blank" rel="noopener">View on GitHub</a></p>
+            </article>
+            <article class="card main">
+              <h3>Autonomous AI-Driven DevOps Log Analyzer &amp; Self-Healing System<span class="tag">In progress</span></h3>
+              <div class="meta">AIOps</div>
+              <ul>
+                <li>Designing an AIOps system that parses real-time server and application logs and classifies failure patterns using machine learning and NLP.</li>
+                <li>Building feature extraction and supervised classification models to detect and categorize error types, aiming to reduce mean-time-to-detection (MTTD) during outages.</li>
+                <li>Planning a rule-guarded remediation module with rollback, audit trails and a real-time monitoring dashboard.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- 4 EDUCATION -->
+        <section class="page" id="education" aria-label="Education and certifications" hidden>
+          <h2 class="title">Education and skills</h2>
+          <p class="sub">Formal study, and the skills I bring to data and AI/ML work.</p>
+          <div class="grid">
+            <article class="card main">
+              <h2>Education</h2>
+              <div class="item"><b>B.Sc. Data Science and Analytics</b>Jain University, Bengaluru<br><small>2025 – 2028</small></div>
+              <div class="item"><b>Diploma in Civil Engineering</b>Government Women's Polytechnic, Hubli<br><small>Completed 2020</small></div>
+            </article>
+            <article class="card main">
+              <h2>Skills</h2>
+              <p class="skill"><b>Data analysis and BI:</b> SQL, Excel (filters, pivot tables), Power BI, Tableau, data cleaning, exploratory analysis</p>
+              <p class="skill"><b>Programming:</b> Python, pandas, NumPy, DuckDB</p>
+              <p class="skill"><b>Machine learning:</b> feature engineering, classification, Random Forest, model evaluation, Precision@K, grouped validation, baseline design, leakage detection</p>
+              <p class="skill"><b>Libraries and applied work:</b> scikit-learn, matplotlib, search intelligence, human-in-the-loop systems</p>
+              <p class="skill"><b>Operations strengths:</b> root-cause analysis, compliance checks, stakeholder communication, escalation management</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 4b CERTIFICATIONS -->
+        <section class="page" id="certifications" aria-label="Certifications" hidden>
+          <h2 class="title">Certifications</h2>
+          <p class="sub">Issued by FlyRank AI, and publicly verifiable by anyone.</p>
+          <div class="grid">
+            <article class="card main">
+              <h3>Machine Learning Internship Program</h3>
+              <div class="meta">FlyRank AI, issued Oct 2026</div>
+              <div class="idrow"><code id="id1">FR-D11-B55A0-891DD</code><button class="copy" type="button" data-copy="FR-D11-B55A0-891DD" data-el="id1">Copy ID</button></div>
+            </article>
+            <article class="card main">
+              <h3>AI Fluency Internship Program</h3>
+              <div class="meta">FlyRank AI, issued Oct 2026</div>
+              <div class="idrow"><code id="id2">FR-D11-EC35C-51C18</code><button class="copy" type="button" data-copy="FR-D11-EC35C-51C18" data-el="id2">Copy ID</button></div>
+            </article>
+          </div>
+          <div class="verify wide">
+            <b>Hirers: verify these online.</b> FlyRank keeps a public record for every credential. Open the page, enter the credential ID above and the first name <b>Ramya</b>. No account is needed.
+            <div><a class="btn fill" href="https://internship.flyrank.ai/verify" target="_blank" rel="noopener">Open FlyRank verification</a></div>
+            <small>Questions: verify@internship.flyrank.ai</small>
+          </div>
+        </section>
+
+        <!-- 5 CONTACT -->
+        <section class="page" id="contact" aria-label="Contact" hidden>
+          <div class="closing">
+            <h2 id="closing-h">Looking for someone with these skills?</h2>
+            <p>If your team needs an analyst who brings 5+ years of operations and data-quality experience together with hands-on SQL, Power BI, Python and machine-learning skills, I would welcome the conversation. Email me and let's talk about how I can contribute.</p>
+            <div class="endbtns">
+              <a class="btn light" href="mailto:ramyahegde18@gmail.com?subject=Opportunity%20for%20Ramya%20Hegde">Email me</a>
+              <a class="btn ghost" href="Ramya_Hegde_Resume.pdf" target="_blank" rel="noopener">View resume</a>
+            </div>
+            <div class="thanks">
+              <h3>Thank you</h3>
+              <p>Thank you for taking the time to view my portfolio. I look forward to hearing from you.</p>
+            </div>
+          </div>
+          <div class="reach">
+            <a class="card" href="mailto:ramyahegde18@gmail.com"><b>Email</b>ramyahegde18@gmail.com</a>
+            <a class="card" href="https://linkedin.com/in/ramyaahegde" target="_blank" rel="noopener"><b>LinkedIn</b>linkedin.com/in/ramyaahegde</a>
+            <a class="card" href="https://github.com/ramyaa-hegde/ramyaa-hegde" target="_blank" rel="noopener"><b>GitHub</b>github.com/ramyaa-hegde</a>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="bottom">
+      <span><strong>Ramya Hegde</strong><span class="hide-n">, Bengaluru, India</span></span>
+      <a href="mailto:ramyahegde18@gmail.com">ramyahegde18@gmail.com</a>
+    </footer>
+
+  </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var pages=[].slice.call(document.querySelectorAll('.page')),
+      tabs=[].slice.call(document.querySelectorAll('[data-go]')),
+      prev=document.getElementById('prev'), next=document.getElementById('next'),
+      sc=document.getElementById('scroller'), shell=document.getElementById('shell'),
+      cur=0;
+  function go(i){
+    cur=Math.max(0,Math.min(pages.length-1,i));
+    pages.forEach(function(p,k){p.hidden=(k!==cur)});
+    tabs.forEach(function(t){t.setAttribute('aria-selected',String(+t.dataset.go===cur))});
+    prev.disabled=(cur===0); next.disabled=(cur===pages.length-1);
+    sc.scrollTop=0;
+    try{history.replaceState(null,'','#'+pages[cur].id)}catch(e){}
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){go(+t.dataset.go)})});
+  prev.addEventListener('click',function(){go(cur-1)});
+  next.addEventListener('click',function(){go(cur+1)});
+  document.getElementById('explore').addEventListener('click',function(){go(1)});
+  [].slice.call(document.querySelectorAll('[data-page]')).forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();go(pages.map(function(p){return p.id}).indexOf(a.dataset.page))});
+  });
+  [].slice.call(document.querySelectorAll('.copy')).forEach(function(b){
+    b.addEventListener('click',function(){
+      function ok(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy ID'},1500)}
+      function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById(b.dataset.el));var g=getSelection();g.removeAllRanges();g.addRange(r);b.textContent='Selected, press Ctrl+C';}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(b.dataset.copy).then(ok,sel)}else{sel()}
+    });
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight')go(cur+1); else if(e.key==='ArrowLeft')go(cur-1);
+  });
+  [].slice.call(document.querySelectorAll('.viewbar [data-view]')).forEach(function(b){
+    b.addEventListener('click',function(){
+      shell.dataset.view=b.dataset.view;
+      [].slice.call(document.querySelectorAll('.viewbar [data-view]')).forEach(function(x){
+        x.setAttribute('aria-pressed',String(x===b));
+      });
+    });
+  });
+  var h=location.hash.replace('#',''), idx=pages.map(function(p){return p.id}).indexOf(h);
+  go(idx>-1?idx:0);
+})();
+</script>
+</body>
+</html>
