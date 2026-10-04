@@ -20,6 +20,7 @@
 }
 *{box-sizing:border-box}
 html,body{margin:0;height:100%}
+body{height:100vh;height:100dvh}
 body{display:flex;flex-direction:column;background:var(--desk);color:var(--ink);font:400 16px/1.55 var(--text)}
 a{color:var(--accent)}
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
@@ -31,16 +32,16 @@ button{font:inherit;cursor:pointer}
 .viewbar button{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1.5px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
 .viewbar button[aria-pressed=true]{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600}
 .viewbar svg{width:18px;height:18px}
-.stage{flex:1;min-height:0;display:flex;justify-content:center;align-items:stretch}
+.stage{flex:1;min-height:0;min-width:0;display:flex;justify-content:center;align-items:stretch}
 .shell[data-view=mobile] .stage{align-items:center;padding:0 0 14px}
 .shell[data-view=mobile] .app{width:390px;height:min(820px,calc(100vh - 54px));border:10px solid var(--ink);border-radius:34px;box-shadow:0 18px 50px rgba(27,26,25,.28)}
 .shell{display:flex;flex-direction:column;flex:1;min-height:0}
 
 /* app */
-.app{width:100%;container:app/inline-size;display:grid;grid-template-rows:auto 1fr auto;background:var(--bg);overflow:hidden}
-.top{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px;padding:0 22px;background:var(--bar);color:#fff}
-.brand{font:700 1.15rem var(--head);white-space:nowrap;color:#fff}
-.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.app{width:100%;min-width:0;container:app/inline-size;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr auto;background:var(--bg);overflow:hidden}
+.top{min-width:0;display:flex;align-items:center;gap:12px;height:56px;padding:0 22px;background:var(--bar);color:#fff}
+.brand{font:700 1.15rem var(--head);white-space:nowrap;color:#fff;flex:none}
+.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;min-width:0;margin-left:auto;position:relative;-webkit-overflow-scrolling:touch}
 .tabs::-webkit-scrollbar{display:none}
 .tabs button,.tabs a{white-space:nowrap;padding:8px 13px;border:0;border-bottom:3px solid transparent;background:none;color:#D5EBE7;font-weight:600;font-size:.97rem;text-decoration:none;border-radius:8px 8px 0 0}
 .tabs button:hover,.tabs a:hover{color:#fff}
@@ -49,7 +50,16 @@ button{font:inherit;cursor:pointer}
 .tabs{align-self:stretch}
 .tabs button,.tabs a{display:flex;align-items:center}
 
-main{position:relative;min-height:0}
+main{position:relative;min-height:0;min-width:0}
+.pager{display:none;position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:3;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:.85rem;font-weight:600;color:var(--ink);box-shadow:0 4px 14px rgba(16,32,30,.12);white-space:nowrap}
+.pager{font-family:inherit;cursor:pointer}
+.pager svg{width:15px;height:15px;vertical-align:-2px;margin-right:6px}
+.pager span{color:var(--muted);font-weight:400;margin-left:8px}
+.pager:disabled{opacity:.65;cursor:default}
+.arrow .ic-home{display:none}
+.arrow.is-home .ic-home{display:block}
+.arrow.is-home .ic-next{display:none}
+.arrow.is-home{background:var(--accent);color:#fff;border-color:var(--accent)}
 .scroller{height:100%;overflow-y:auto}
 .page{padding:34px 84px 40px;max-width:1180px;margin:0 auto}
 .page[hidden]{display:none}
@@ -124,6 +134,11 @@ main{position:relative;min-height:0}
 .verify small{display:block;color:var(--muted)}
 .moves a{display:inline-block;margin-top:6px;font-weight:600}
 
+@container app (max-width:1100px){
+  .top{padding:0 12px}
+  .brand{font-size:1rem}
+  .tabs button,.tabs a{padding:8px 9px;font-size:.9rem}
+}
 @container app (max-width:900px){
   .page{padding:26px 64px 34px}
   .grid,.three,.reach{grid-template-columns:1fr}
@@ -133,13 +148,16 @@ main{position:relative;min-height:0}
   .brand{font-size:.95rem}
   .top,.bottom{height:52px;padding:0 12px}
   .tabs button,.tabs a{padding:8px 10px;font-size:.92rem}
-  .page{padding:20px 50px 28px}
+  .page{padding:18px 16px 24px}
+  .scroller{height:calc(100% - 68px)}
+  main::after{content:"";position:absolute;left:0;right:0;bottom:0;height:68px;background:var(--card);border-top:1px solid var(--line)}
   .closing{padding:28px 20px}
   .moves{grid-template-columns:1fr}
   .card{padding:16px}
-  .arrow{width:38px;height:38px}
+  .arrow{top:auto;bottom:11px;transform:none;width:46px;height:46px}
   .arrow svg{width:18px;height:18px}
-  #prev{left:6px}#next{right:6px}
+  #prev{left:14px}#next{right:14px}
+  .pager{display:block;bottom:24px;box-shadow:none;border-color:var(--line);background:var(--bg)}
   .bottom{font-size:.88rem}
   .hide-n{display:none}
 }
@@ -179,8 +197,9 @@ main{position:relative;min-height:0}
     </header>
 
     <main>
+      <button class="pager" id="pager" type="button" aria-label="Go to Home page"></button>
       <button class="arrow" id="prev" type="button" aria-label="Previous page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
-      <button class="arrow" id="next" type="button" aria-label="Next page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+      <button class="arrow" id="next" type="button" aria-label="Next page"><svg class="ic-next" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg><svg class="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg></button>
 
       <div class="scroller" id="scroller">
 
@@ -368,18 +387,25 @@ main{position:relative;min-height:0}
       tabs=[].slice.call(document.querySelectorAll('[data-go]')),
       prev=document.getElementById('prev'), next=document.getElementById('next'),
       sc=document.getElementById('scroller'), shell=document.getElementById('shell'),
+      pager=document.getElementById('pager'),
       cur=0;
   function go(i){
     cur=Math.max(0,Math.min(pages.length-1,i));
     pages.forEach(function(p,k){p.hidden=(k!==cur)});
     tabs.forEach(function(t){t.setAttribute('aria-selected',String(+t.dataset.go===cur))});
-    prev.disabled=(cur===0); next.disabled=(cur===pages.length-1);
+    prev.disabled=(cur===0); next.disabled=false;
+    var last=(cur===pages.length-1); next.classList.toggle('is-home',last); next.setAttribute('aria-label',last?'Back to Home':'Next page');
     sc.scrollTop=0;
+    var at=tabs.filter(function(t){return +t.dataset.go===cur})[0];
+    if(at&&at.parentNode){var tb=at.parentNode;tb.scrollLeft=at.offsetLeft-(tb.clientWidth-at.offsetWidth)/2}
+    pager.disabled=(cur===0);
+    pager.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>Home<span>'+(cur+1)+' / '+pages.length+'</span>';
     try{history.replaceState(null,'','#'+pages[cur].id)}catch(e){}
   }
   tabs.forEach(function(t){t.addEventListener('click',function(){go(+t.dataset.go)})});
   prev.addEventListener('click',function(){go(cur-1)});
-  next.addEventListener('click',function(){go(cur+1)});
+  next.addEventListener('click',function(){go(cur===pages.length-1?0:cur+1)});
+  pager.addEventListener('click',function(){go(0)});
   document.getElementById('explore').addEventListener('click',function(){go(1)});
   [].slice.call(document.querySelectorAll('[data-page]')).forEach(function(a){
     a.addEventListener('click',function(e){e.preventDefault();go(pages.map(function(p){return p.id}).indexOf(a.dataset.page))});
@@ -391,6 +417,12 @@ main{position:relative;min-height:0}
       if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(b.dataset.copy).then(ok,sel)}else{sel()}
     });
   });
+  var sx=0,sy=0;
+  sc.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
+  sc.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;
+    if(Math.abs(dx)>70&&Math.abs(dx)>1.6*Math.abs(dy))go(dx<0?cur+1:cur-1);
+  },{passive:true});
   document.addEventListener('keydown',function(e){
     if(e.key==='ArrowRight')go(cur+1); else if(e.key==='ArrowLeft')go(cur-1);
   });
